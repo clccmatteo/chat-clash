@@ -296,3 +296,20 @@ metadata until the real adapter resolves native emotes. No runtime AI calls.
   and verify the remote head matches the local head.
 - This publishes source only. The app remains local-only; no deployment, runtime
   configuration changes, game changes or Twitch calls are part of this follow-up.
+
+## 2026-10-26 — Showcase recording page
+
+### Step 1 — Private simulator display feed
+
+- Captured the original seed-42 CLI outcome before editing: Team A 2982–2971,
+  3,350 events, robot penalty and fixed MVPs. Added a golden regression and varied
+  cosmetic-seed comparison; scoring RNG draw order and all game rules stay intact.
+- Added friendly original synthetic messages using an independent seeded RNG,
+  Unicode combo glyphs and typed display rows for cheers, redemptions, raids,
+  masked correct flash replies and votes. Each simulator owns its display writer.
+- Server snapshots expose at most 40 simulator rows per team, gated by simulator
+  mode. Idle/live feeds are empty; mocked real chat, including during simulation,
+  cannot enter the feed. Completed demos retain their final synthetic rows.
+- Verification: 53 tests pass; strict TypeScript and diff whitespace checks pass.
+  CLI output retains the exact baseline. No game/config/Twitch source edits, no
+  external runtime dependency, and no submission/video-script changes.

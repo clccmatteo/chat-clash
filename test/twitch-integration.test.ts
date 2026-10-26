@@ -56,7 +56,7 @@ async function harness(botLogin = "", nonAffiliate = false) {
     return result;
   };
   const step = async (ms: number) => {
-    for (let remaining = ms; remaining > 0; ) {
+    for (let remaining = ms; remaining > 0;) {
       const delta = Math.min(1000, remaining);
       remaining -= delta;
       mock.keepalive();
@@ -156,6 +156,8 @@ test("two broadcasters authorize once; live EventSub scoring, dedup, reward IDs,
       bits: 100,
     });
     assert.equal(h.app.snapshot().game.scores.A, 10);
+    assert.equal(h.app.snapshot().mode, "live");
+    assert.deepEqual(h.app.snapshot().demoFeed, { A: [], B: [] });
     assert.ok(!JSON.stringify(h.app.snapshot()).includes(raw));
     assert.ok(!JSON.stringify(h.app.snapshot()).includes("private-access"));
     await h.step(90000);
@@ -269,9 +271,22 @@ test("two broadcasters authorize once; live EventSub scoring, dedup, reward IDs,
         .status,
       200,
     );
-    h.mock.emit("100", CHAT, chatEvent({ message_id: "ignore-during-sim" }));
+    h.mock.emit(
+      "100",
+      CHAT,
+      chatEvent({
+        message_id: "ignore-during-sim",
+        chatter_user_name: "PRIVATE_LIVE_NAME",
+        message: { text: raw, fragments: [] },
+      }),
+    );
     assert.equal(h.app.snapshot().game.eventCount, 0);
+    assert.deepEqual(h.app.snapshot().demoFeed, { A: [], B: [] });
     await h.step(1000);
+    assert.ok(!JSON.stringify(h.app.snapshot().demoFeed).includes(raw));
+    assert.ok(
+      !JSON.stringify(h.app.snapshot().demoFeed).includes("PRIVATE_LIVE_NAME"),
+    );
     assert.equal(h.mock.sent.length, sent);
   } finally {
     await h.cleanup();
@@ -411,7 +426,14 @@ test("announcements fit Twitch's limit, vote options go only to winners, and que
     for (const team of ["A", "B"] as const)
       assert.ok(localized.find((m) => m.team === team)?.text.includes(seconds));
     const command = language === "en" ? "!vote NUMBER" : "!vote NUMERO";
-    assert.ok(localized.some((m) => m.team === "A" && m.text.includes(command) && m.text.includes(seconds)));
+    assert.ok(
+      localized.some(
+        (m) =>
+          m.team === "A" &&
+          m.text.includes(command) &&
+          m.text.includes(seconds),
+      ),
+    );
     assert.ok(localized.every((m) => m.text.length <= 500));
     const draw = roundAnnouncements({ ...state, winner: null }, "rush");
     assert.ok(draw.every((m) => !m.text.includes("!vote")));

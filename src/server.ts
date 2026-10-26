@@ -21,6 +21,7 @@ import {
 } from "./game/index.js";
 import type { Challenge, ClashEvent, Settings } from "./game/types.js";
 import { createSimulator } from "./sim/index.js";
+import { emptyDisplayFeed } from "./sim/display.js";
 import { TwitchManager, type TwitchOptions } from "./twitch/manager.js";
 import { TwitchError } from "./twitch/runtime.js";
 import { roundAnnouncements } from "./twitch/announcements.js";
@@ -155,6 +156,7 @@ export function createClashServer(
     speed = 1,
     simulator: ReturnType<typeof createSimulator> | null = null;
   let usedChallenges: string[] = [];
+  let displayFeed = emptyDisplayFeed();
   let mode: "idle" | "live" | "simulator" = "idle",
     roundId = 0,
     liveStartedAt = 0;
@@ -180,6 +182,9 @@ export function createClashServer(
     speed,
     safePenalties,
     mode,
+    demoRound: roundId,
+    demoFeed:
+      mode === "simulator" ? structuredClone(displayFeed) : emptyDisplayFeed(),
     twitch: twitch.status(),
   });
   const broadcast = () => {
@@ -256,8 +261,10 @@ export function createClashServer(
       const previous = state.phase;
       state = tick(state, virtualNow);
       announcePhase(previous);
-      if (simulator)
+      if (simulator) {
         for (const event of simulator(state, virtualNow)) ingest(event);
+        displayFeed = simulator.displayFeed();
+      }
       if (state.phase === "complete") {
         simulator = null;
         speed = 1;
@@ -406,6 +413,7 @@ export function createClashServer(
     }
     settings = nextSettings;
     state = next;
+    displayFeed = emptyDisplayFeed();
     roundId++;
     mode =
       action === "start"

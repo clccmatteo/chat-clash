@@ -1,5 +1,6 @@
 import { config } from "../game/index.js";
 import type { ClashEvent, GameState, Team } from "../game/types.js";
+import { createSimulatorDisplay } from "./display.js";
 
 export function seededRandom(seed: number) {
   let value = seed >>> 0;
@@ -25,11 +26,12 @@ const names = [
 ];
 
 // Stateful event producer only. The engine remains the sole authority for scores.
-export function createSimulator(seed = 42) {
+export function createSimulator(seed = 42, cosmeticSeed = seed ^ 0x434c4153) {
   const random = seededRandom(seed);
+  const display = createSimulatorDisplay(seededRandom(cosmeticSeed));
   const fired = new Set<string>();
   let lastStep = -1;
-  return (state: GameState, now: number): ClashEvent[] => {
+  const simulate = (state: GameState, now: number): ClashEvent[] => {
     if (
       state.startedAt === null ||
       ["stopped", "complete", "idle"].includes(state.phase)
@@ -45,17 +47,20 @@ export function createSimulator(seed = 42) {
       user: number,
       extras: Partial<ClashEvent> = {},
     ) => {
-      events.push({
+      // Preserve the legacy text draw, including calls whose text is overridden.
+      // Cosmetic variety must never advance or remove a scoring RNG draw.
+      random();
+      const event: ClashEvent = {
         type: "chat",
         team,
         userId: `${team}-${user}`,
         userName: `${names[user % names.length]}_${user}`,
-        text: ["lets go", "what a round", "we got this", "clash!"][
-          Math.floor(random() * 4)
-        ],
+        text: display.message(state.challenge),
         ts: now,
         ...extras,
-      });
+      };
+      events.push(event);
+      display.record(state, event);
     };
     if (state.phase === "verdict") {
       if (state.winner && random() > 0.35)
@@ -89,8 +94,6 @@ export function createSimulator(seed = 42) {
       } else
         add(team, user, {
           emotes: random() < 0.4 ? ["CLASH"] : [],
-          text:
-            state.phase === "flash" ? "surely it is a potato" : "lets go crew",
         });
     }
     const second = Math.floor(elapsed / 1000);
@@ -113,4 +116,5 @@ export function createSimulator(seed = 42) {
     }
     return events;
   };
+  return Object.assign(simulate, { displayFeed: display.snapshot });
 }

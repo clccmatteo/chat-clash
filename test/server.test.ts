@@ -18,6 +18,7 @@ test("HTTP and WebSocket deliver a full simulated round, vote, reset and safe sn
     ).json()) as ReturnType<typeof app.snapshot>;
     assert.equal(initial.game.phase, "idle");
     assert.equal(initial.game.challenge, null);
+    assert.deepEqual(initial.demoFeed, { A: [], B: [] });
     for (const path of [
       "/control/",
       "/overlay/",
@@ -116,15 +117,27 @@ test("HTTP and WebSocket deliver a full simulated round, vote, reset and safe sn
       assert.ok(!packet.includes("surely it is a potato"));
       assert.ok(!packet.includes("lastChatAt"));
       const parsed = JSON.parse(packet);
+      for (const team of ["A", "B"]) {
+        assert.ok(parsed.demoFeed[team].length <= 40);
+        for (const row of parsed.demoFeed[team]) {
+          assert.ok(!Object.hasOwn(row, "answers"));
+          if (row.kind === "answer")
+            assert.equal(row.text, "✓ answered the flash challenge");
+        }
+      }
       if (parsed.game.challenge)
         assert.ok(!Object.hasOwn(parsed.game.challenge, "answers"));
     }
     assert.equal((await post({ action: "reset" })).status, 200);
     assert.equal(app.snapshot().game.scores.A, 0);
     assert.equal(app.snapshot().game.phase, "idle");
+    assert.deepEqual(app.snapshot().demoFeed, { A: [], B: [] });
     const live = { ...initial.settings, approved: { A: true, B: true } };
     assert.equal((await post({ action: "start", settings: live })).status, 400);
-    assert.equal((await post({ action: "start-simulator", settings: live })).status, 200);
+    assert.equal(
+      (await post({ action: "start-simulator", settings: live })).status,
+      200,
+    );
     app.advance(90000);
     assert.equal(app.snapshot().game.phase, "flash");
     assert.equal((await post({ action: "stop" })).status, 200);
