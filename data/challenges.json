@@ -1,0 +1,1813 @@
+[
+  {
+    "id": "trivia-001",
+    "type": "trivia",
+    "prompt": {
+      "en": "Which keyboard key usually opens a PC game’s pause menu?",
+      "it": "Quale tasto apre di solito il menu di pausa in un gioco per PC?"
+    },
+    "answers": [
+      "escape",
+      "esc"
+    ]
+  },
+  {
+    "id": "trivia-002",
+    "type": "trivia",
+    "prompt": {
+      "en": "What three letters describe a character controlled by the game rather than a player?",
+      "it": "Quali tre lettere indicano un personaggio controllato dal gioco anziché da un giocatore?"
+    },
+    "answers": [
+      "NPC"
+    ]
+  },
+  {
+    "id": "trivia-003",
+    "type": "trivia",
+    "prompt": {
+      "en": "In chat, what two letters stand for “good game”?",
+      "it": "In chat, quali due lettere significano “good game”?"
+    },
+    "answers": [
+      "GG"
+    ]
+  },
+  {
+    "id": "trivia-004",
+    "type": "trivia",
+    "prompt": {
+      "en": "What three letters mean “away from keyboard”?",
+      "it": "Quali tre lettere significano “lontano dalla tastiera”?"
+    },
+    "answers": [
+      "AFK"
+    ]
+  },
+  {
+    "id": "trivia-005",
+    "type": "trivia",
+    "prompt": {
+      "en": "What is the smallest individual picture element on a screen called?",
+      "it": "Come si chiama il più piccolo elemento di un’immagine sullo schermo?"
+    },
+    "answers": [
+      "pixel"
+    ]
+  },
+  {
+    "id": "trivia-006",
+    "type": "trivia",
+    "prompt": {
+      "en": "What is the gaming term for completing a game as fast as possible?",
+      "it": "Come si chiama il completamento di un gioco nel minor tempo possibile?"
+    },
+    "answers": [
+      "speedrun",
+      "speedrunning"
+    ]
+  },
+  {
+    "id": "trivia-007",
+    "type": "trivia",
+    "prompt": {
+      "en": "A classic six-sided die has how many faces?",
+      "it": "Quante facce ha un dado classico?"
+    },
+    "answers": [
+      "6",
+      "six",
+      "sei"
+    ]
+  },
+  {
+    "id": "trivia-008",
+    "type": "trivia",
+    "prompt": {
+      "en": "How many squares are on a standard chessboard?",
+      "it": "Quante caselle ha una scacchiera standard?"
+    },
+    "answers": [
+      "64",
+      "sixty four",
+      "sessantaquattro"
+    ]
+  },
+  {
+    "id": "trivia-009",
+    "type": "trivia",
+    "prompt": {
+      "en": "Which chess piece moves in an L shape?",
+      "it": "Quale pezzo degli scacchi si muove a L?"
+    },
+    "answers": [
+      "knight",
+      "cavallo"
+    ]
+  },
+  {
+    "id": "trivia-010",
+    "type": "trivia",
+    "prompt": {
+      "en": "In chess, which piece must you checkmate to win?",
+      "it": "Negli scacchi, quale pezzo devi mettere sotto scacco matto per vincere?"
+    },
+    "answers": [
+      "king",
+      "re"
+    ]
+  },
+  {
+    "id": "trivia-011",
+    "type": "trivia",
+    "prompt": {
+      "en": "What does the P in FPS stand for when measuring rendering speed?",
+      "it": "Cosa significa la P di FPS quando si misura la velocità delle immagini?"
+    },
+    "answers": [
+      "per"
+    ]
+  },
+  {
+    "id": "trivia-012",
+    "type": "trivia",
+    "prompt": {
+      "en": "In RGB, which color is represented by B?",
+      "it": "In RGB, quale colore rappresenta la B?"
+    },
+    "answers": [
+      "blue",
+      "blu"
+    ]
+  },
+  {
+    "id": "trivia-013",
+    "type": "trivia",
+    "prompt": {
+      "en": "How many primary light colors are combined in RGB?",
+      "it": "Quanti colori primari della luce combina il sistema RGB?"
+    },
+    "answers": [
+      "3",
+      "three",
+      "tre"
+    ]
+  },
+  {
+    "id": "trivia-014",
+    "type": "trivia",
+    "prompt": {
+      "en": "What decimal number does binary 10 represent?",
+      "it": "Quale numero decimale rappresenta il numero binario 10?"
+    },
+    "answers": [
+      "2",
+      "two",
+      "due"
+    ]
+  },
+  {
+    "id": "trivia-015",
+    "type": "trivia",
+    "prompt": {
+      "en": "What number does the Roman numeral X represent?",
+      "it": "Quale numero rappresenta il numero romano X?"
+    },
+    "answers": [
+      "10",
+      "ten",
+      "dieci"
+    ]
+  },
+  {
+    "id": "trivia-016",
+    "type": "trivia",
+    "prompt": {
+      "en": "What is the name for a secret hidden reference in a game?",
+      "it": "Come si chiama un riferimento segreto nascosto in un gioco?"
+    },
+    "answers": [
+      "easter egg"
+    ]
+  },
+  {
+    "id": "trivia-017",
+    "type": "trivia",
+    "prompt": {
+      "en": "What computer accessory moves the pointer when you slide it across a desk?",
+      "it": "Quale accessorio sposta il puntatore quando lo fai scorrere sulla scrivania?"
+    },
+    "answers": [
+      "mouse"
+    ]
+  },
+  {
+    "id": "trivia-018",
+    "type": "trivia",
+    "prompt": {
+      "en": "What keyboard key inserts a blank space between words?",
+      "it": "Quale tasto inserisce uno spazio vuoto tra le parole?"
+    },
+    "answers": [
+      "space",
+      "spacebar",
+      "spazio",
+      "barra spaziatrice"
+    ]
+  },
+  {
+    "id": "trivia-019",
+    "type": "trivia",
+    "prompt": {
+      "en": "What symbol begins a hashtag?",
+      "it": "Quale simbolo apre un hashtag?"
+    },
+    "answers": [
+      "#",
+      "hash",
+      "cancelletto"
+    ]
+  },
+  {
+    "id": "trivia-020",
+    "type": "trivia",
+    "prompt": {
+      "en": "What symbol separates the username and domain in an email address?",
+      "it": "Quale simbolo separa il nome utente e il dominio in un indirizzo email?"
+    },
+    "answers": [
+      "@",
+      "at",
+      "chiocciola"
+    ]
+  },
+  {
+    "id": "trivia-021",
+    "type": "trivia",
+    "prompt": {
+      "en": "What does the W in WWW stand for?",
+      "it": "Quale parola rappresenta la W in WWW?"
+    },
+    "answers": [
+      "world",
+      "wide",
+      "web"
+    ]
+  },
+  {
+    "id": "trivia-022",
+    "type": "trivia",
+    "prompt": {
+      "en": "What English word describes a repeating animated image with the file extension .gif?",
+      "it": "Quale sigla identifica un’immagine animata con estensione .gif?"
+    },
+    "answers": [
+      "GIF"
+    ]
+  },
+  {
+    "id": "trivia-023",
+    "type": "trivia",
+    "prompt": {
+      "en": "What is the term for a small preview image for a video?",
+      "it": "Come si chiama la piccola immagine di anteprima di un video?"
+    },
+    "answers": [
+      "thumbnail",
+      "miniatura"
+    ]
+  },
+  {
+    "id": "trivia-024",
+    "type": "trivia",
+    "prompt": {
+      "en": "How many minutes are in a quarter of an hour?",
+      "it": "Quanti minuti ci sono in un quarto d’ora?"
+    },
+    "answers": [
+      "15",
+      "fifteen",
+      "quindici"
+    ]
+  },
+  {
+    "id": "trivia-025",
+    "type": "trivia",
+    "prompt": {
+      "en": "What shape has three sides?",
+      "it": "Quale figura geometrica ha tre lati?"
+    },
+    "answers": [
+      "triangle",
+      "triangolo"
+    ]
+  },
+  {
+    "id": "trivia-026",
+    "type": "trivia",
+    "prompt": {
+      "en": "How many sides does a hexagon have?",
+      "it": "Quanti lati ha un esagono?"
+    },
+    "answers": [
+      "6",
+      "six",
+      "sei"
+    ]
+  },
+  {
+    "id": "trivia-027",
+    "type": "trivia",
+    "prompt": {
+      "en": "Which planet is nicknamed the Red Planet?",
+      "it": "Quale pianeta è soprannominato il pianeta rosso?"
+    },
+    "answers": [
+      "Mars",
+      "Marte"
+    ]
+  },
+  {
+    "id": "trivia-028",
+    "type": "trivia",
+    "prompt": {
+      "en": "What is the largest ocean on Earth?",
+      "it": "Qual è l’oceano più grande della Terra?"
+    },
+    "answers": [
+      "Pacific",
+      "Pacific Ocean",
+      "Pacifico",
+      "Oceano Pacifico"
+    ]
+  },
+  {
+    "id": "trivia-029",
+    "type": "trivia",
+    "prompt": {
+      "en": "What is the chemical formula for water?",
+      "it": "Qual è la formula chimica dell’acqua?"
+    },
+    "answers": [
+      "H2O",
+      "H₂O"
+    ]
+  },
+  {
+    "id": "trivia-030",
+    "type": "trivia",
+    "prompt": {
+      "en": "What is the capital of Italy?",
+      "it": "Qual è la capitale d’Italia?"
+    },
+    "answers": [
+      "Rome",
+      "Roma"
+    ]
+  },
+  {
+    "id": "trivia-031",
+    "type": "trivia",
+    "prompt": {
+      "en": "What is the capital of Japan?",
+      "it": "Qual è la capitale del Giappone?"
+    },
+    "answers": [
+      "Tokyo",
+      "Tokio"
+    ]
+  },
+  {
+    "id": "trivia-032",
+    "type": "trivia",
+    "prompt": {
+      "en": "How many strings does a standard guitar have?",
+      "it": "Quante corde ha una chitarra standard?"
+    },
+    "answers": [
+      "6",
+      "six",
+      "sei"
+    ]
+  },
+  {
+    "id": "trivia-033",
+    "type": "trivia",
+    "prompt": {
+      "en": "What instrument has black and white keys and is played with both hands?",
+      "it": "Quale strumento ha tasti bianchi e neri e si suona con entrambe le mani?"
+    },
+    "answers": [
+      "piano",
+      "pianoforte"
+    ]
+  },
+  {
+    "id": "trivia-034",
+    "type": "trivia",
+    "prompt": {
+      "en": "Which animal is famous for changing color and has a long sticky tongue?",
+      "it": "Quale animale è famoso per cambiare colore e ha una lunga lingua appiccicosa?"
+    },
+    "answers": [
+      "chameleon",
+      "camaleonte"
+    ]
+  },
+  {
+    "id": "trivia-035",
+    "type": "trivia",
+    "prompt": {
+      "en": "What do bees make from flower nectar?",
+      "it": "Cosa producono le api dal nettare dei fiori?"
+    },
+    "answers": [
+      "honey",
+      "miele"
+    ]
+  },
+  {
+    "id": "trivia-036",
+    "type": "trivia",
+    "prompt": {
+      "en": "How many legs does a spider have?",
+      "it": "Quante zampe ha un ragno?"
+    },
+    "answers": [
+      "8",
+      "eight",
+      "otto"
+    ]
+  },
+  {
+    "id": "trivia-037",
+    "type": "trivia",
+    "prompt": {
+      "en": "What season comes immediately after summer?",
+      "it": "Quale stagione viene subito dopo l’estate?"
+    },
+    "answers": [
+      "autumn",
+      "fall",
+      "autunno"
+    ]
+  },
+  {
+    "id": "trivia-038",
+    "type": "trivia",
+    "prompt": {
+      "en": "Which direction is opposite to north?",
+      "it": "Quale direzione è opposta al nord?"
+    },
+    "answers": [
+      "south",
+      "sud"
+    ]
+  },
+  {
+    "id": "trivia-039",
+    "type": "trivia",
+    "prompt": {
+      "en": "What is frozen water called?",
+      "it": "Come si chiama l’acqua allo stato solido?"
+    },
+    "answers": [
+      "ice",
+      "ghiaccio"
+    ]
+  },
+  {
+    "id": "trivia-040",
+    "type": "trivia",
+    "prompt": {
+      "en": "What is the name of the star at the center of our solar system?",
+      "it": "Come si chiama la stella al centro del nostro sistema solare?"
+    },
+    "answers": [
+      "Sun",
+      "the Sun",
+      "Sole",
+      "il Sole"
+    ]
+  },
+  {
+    "id": "anagram-001",
+    "type": "anagram",
+    "prompt": {
+      "en": "Unscramble this English word: RTALPO",
+      "it": "Riordina questa parola inglese: RTALPO"
+    },
+    "answers": [
+      "portal"
+    ]
+  },
+  {
+    "id": "anagram-002",
+    "type": "anagram",
+    "prompt": {
+      "en": "Unscramble this English word: AGONDR",
+      "it": "Riordina questa parola inglese: AGONDR"
+    },
+    "answers": [
+      "dragon"
+    ]
+  },
+  {
+    "id": "anagram-003",
+    "type": "anagram",
+    "prompt": {
+      "en": "Unscramble this English word: REAMST",
+      "it": "Riordina questa parola inglese: REAMST"
+    },
+    "answers": [
+      "stream"
+    ]
+  },
+  {
+    "id": "anagram-004",
+    "type": "anagram",
+    "prompt": {
+      "en": "Unscramble this English word: CKETRO",
+      "it": "Riordina questa parola inglese: CKETRO"
+    },
+    "answers": [
+      "rocket"
+    ]
+  },
+  {
+    "id": "anagram-005",
+    "type": "anagram",
+    "prompt": {
+      "en": "Unscramble this English word: ANETPL",
+      "it": "Riordina questa parola inglese: ANETPL"
+    },
+    "answers": [
+      "planet"
+    ]
+  },
+  {
+    "id": "anagram-006",
+    "type": "anagram",
+    "prompt": {
+      "en": "Unscramble this English word: STLECA",
+      "it": "Riordina questa parola inglese: STLECA"
+    },
+    "answers": [
+      "castle"
+    ]
+  },
+  {
+    "id": "anagram-007",
+    "type": "anagram",
+    "prompt": {
+      "en": "Unscramble this English word: ZZLEPU",
+      "it": "Riordina questa parola inglese: ZZLEPU"
+    },
+    "answers": [
+      "puzzle"
+    ]
+  },
+  {
+    "id": "anagram-008",
+    "type": "anagram",
+    "prompt": {
+      "en": "Unscramble this English word: IELDSH",
+      "it": "Riordina questa parola inglese: IELDSH"
+    },
+    "answers": [
+      "shield"
+    ]
+  },
+  {
+    "id": "anagram-009",
+    "type": "anagram",
+    "prompt": {
+      "en": "Unscramble this English word: ZARDWI",
+      "it": "Riordina questa parola inglese: ZARDWI"
+    },
+    "answers": [
+      "wizard"
+    ]
+  },
+  {
+    "id": "anagram-010",
+    "type": "anagram",
+    "prompt": {
+      "en": "Unscramble this English word: TTONBU",
+      "it": "Riordina questa parola inglese: TTONBU"
+    },
+    "answers": [
+      "button"
+    ]
+  },
+  {
+    "id": "anagram-011",
+    "type": "anagram",
+    "prompt": {
+      "en": "Unscramble this English word: MERACA",
+      "it": "Riordina questa parola inglese: MERACA"
+    },
+    "answers": [
+      "camera"
+    ]
+  },
+  {
+    "id": "anagram-012",
+    "type": "anagram",
+    "prompt": {
+      "en": "Unscramble this English word: LVERSI",
+      "it": "Riordina questa parola inglese: LVERSI"
+    },
+    "answers": [
+      "silver"
+    ]
+  },
+  {
+    "id": "anagram-013",
+    "type": "anagram",
+    "prompt": {
+      "en": "Unscramble this English word: RESTFO",
+      "it": "Riordina questa parola inglese: RESTFO"
+    },
+    "answers": [
+      "forest"
+    ]
+  },
+  {
+    "id": "anagram-014",
+    "type": "anagram",
+    "prompt": {
+      "en": "Unscramble this English word: CTORYVI",
+      "it": "Riordina questa parola inglese: CTORYVI"
+    },
+    "answers": [
+      "victory"
+    ]
+  },
+  {
+    "id": "anagram-015",
+    "type": "anagram",
+    "prompt": {
+      "en": "Unscramble this English word: UNDERTH",
+      "it": "Riordina questa parola inglese: UNDERTH"
+    },
+    "answers": [
+      "thunder"
+    ]
+  },
+  {
+    "id": "anagram-016",
+    "type": "anagram",
+    "prompt": {
+      "en": "Unscramble this Italian word: AGODR",
+      "it": "Riordina questa parola italiana: AGODR"
+    },
+    "answers": [
+      "drago"
+    ]
+  },
+  {
+    "id": "anagram-017",
+    "type": "anagram",
+    "prompt": {
+      "en": "Unscramble this Italian word: VOLANU",
+      "it": "Riordina questa parola italiana: VOLANU"
+    },
+    "answers": [
+      "nuvola"
+    ]
+  },
+  {
+    "id": "anagram-018",
+    "type": "anagram",
+    "prompt": {
+      "en": "Unscramble this Italian word: ELLAST",
+      "it": "Riordina questa parola italiana: ELLAST"
+    },
+    "answers": [
+      "stella"
+    ]
+  },
+  {
+    "id": "anagram-019",
+    "type": "anagram",
+    "prompt": {
+      "en": "Unscramble this Italian word: HERMOSC",
+      "it": "Riordina questa parola italiana: HERMOSC"
+    },
+    "answers": [
+      "schermo"
+    ]
+  },
+  {
+    "id": "anagram-020",
+    "type": "anagram",
+    "prompt": {
+      "en": "Unscramble this Italian word: STIERATA",
+      "it": "Riordina questa parola italiana: STIERATA"
+    },
+    "answers": [
+      "tastiera"
+    ]
+  },
+  {
+    "id": "anagram-021",
+    "type": "anagram",
+    "prompt": {
+      "en": "Unscramble this Italian word: UADRASQ",
+      "it": "Riordina questa parola italiana: UADRASQ"
+    },
+    "answers": [
+      "squadra"
+    ]
+  },
+  {
+    "id": "anagram-022",
+    "type": "anagram",
+    "prompt": {
+      "en": "Unscramble this Italian word: IDASF",
+      "it": "Riordina questa parola italiana: IDASF"
+    },
+    "answers": [
+      "sfida"
+    ]
+  },
+  {
+    "id": "anagram-023",
+    "type": "anagram",
+    "prompt": {
+      "en": "Unscramble this Italian word: OCOFU",
+      "it": "Riordina questa parola italiana: OCOFU"
+    },
+    "answers": [
+      "fuoco"
+    ]
+  },
+  {
+    "id": "anagram-024",
+    "type": "anagram",
+    "prompt": {
+      "en": "Unscramble this Italian word: TTORIAVI",
+      "it": "Riordina questa parola italiana: TTORIAVI"
+    },
+    "answers": [
+      "vittoria"
+    ]
+  },
+  {
+    "id": "anagram-025",
+    "type": "anagram",
+    "prompt": {
+      "en": "Unscramble this Italian word: LMINEFU",
+      "it": "Riordina questa parola italiana: LMINEFU"
+    },
+    "answers": [
+      "fulmine"
+    ]
+  },
+  {
+    "id": "anagram-026",
+    "type": "anagram",
+    "prompt": {
+      "en": "Unscramble this Italian word: SOROTE",
+      "it": "Riordina questa parola italiana: SOROTE"
+    },
+    "answers": [
+      "tesoro"
+    ]
+  },
+  {
+    "id": "anagram-027",
+    "type": "anagram",
+    "prompt": {
+      "en": "Unscramble this Italian word: STELLOCA",
+      "it": "Riordina questa parola italiana: STELLOCA"
+    },
+    "answers": [
+      "castello"
+    ]
+  },
+  {
+    "id": "anagram-028",
+    "type": "anagram",
+    "prompt": {
+      "en": "Unscramble this Italian word: RESTAFO",
+      "it": "Riordina questa parola italiana: RESTAFO"
+    },
+    "answers": [
+      "foresta"
+    ]
+  },
+  {
+    "id": "anagram-029",
+    "type": "anagram",
+    "prompt": {
+      "en": "Unscramble this Italian word: GIAMA",
+      "it": "Riordina questa parola italiana: GIAMA"
+    },
+    "answers": [
+      "magia"
+    ]
+  },
+  {
+    "id": "anagram-030",
+    "type": "anagram",
+    "prompt": {
+      "en": "Unscramble this Italian word: NCIOLA",
+      "it": "Riordina questa parola italiana: NCIOLA"
+    },
+    "answers": [
+      "lancio"
+    ]
+  },
+  {
+    "id": "math-001",
+    "type": "math",
+    "prompt": {
+      "en": "Quick math: 17 + 26 = ?",
+      "it": "Calcolo lampo: 17 + 26 = ?"
+    },
+    "answers": [
+      "43"
+    ]
+  },
+  {
+    "id": "math-002",
+    "type": "math",
+    "prompt": {
+      "en": "Quick math: 81 - 37 = ?",
+      "it": "Calcolo lampo: 81 - 37 = ?"
+    },
+    "answers": [
+      "44"
+    ]
+  },
+  {
+    "id": "math-003",
+    "type": "math",
+    "prompt": {
+      "en": "Quick math: 8 × 7 = ?",
+      "it": "Calcolo lampo: 8 × 7 = ?"
+    },
+    "answers": [
+      "56"
+    ]
+  },
+  {
+    "id": "math-004",
+    "type": "math",
+    "prompt": {
+      "en": "Quick math: 96 ÷ 8 = ?",
+      "it": "Calcolo lampo: 96 ÷ 8 = ?"
+    },
+    "answers": [
+      "12"
+    ]
+  },
+  {
+    "id": "math-005",
+    "type": "math",
+    "prompt": {
+      "en": "Quick math: 14 + 19 + 7 = ?",
+      "it": "Calcolo lampo: 14 + 19 + 7 = ?"
+    },
+    "answers": [
+      "40"
+    ]
+  },
+  {
+    "id": "math-006",
+    "type": "math",
+    "prompt": {
+      "en": "Quick math: (9 + 3) × 4 = ?",
+      "it": "Calcolo lampo: (9 + 3) × 4 = ?"
+    },
+    "answers": [
+      "48"
+    ]
+  },
+  {
+    "id": "math-007",
+    "type": "math",
+    "prompt": {
+      "en": "Quick math: 100 - 6 × 8 = ?",
+      "it": "Calcolo lampo: 100 - 6 × 8 = ?"
+    },
+    "answers": [
+      "52"
+    ]
+  },
+  {
+    "id": "math-008",
+    "type": "math",
+    "prompt": {
+      "en": "Quick math: 7 × 7 + 1 = ?",
+      "it": "Calcolo lampo: 7 × 7 + 1 = ?"
+    },
+    "answers": [
+      "50"
+    ]
+  },
+  {
+    "id": "math-009",
+    "type": "math",
+    "prompt": {
+      "en": "Quick math: 144 ÷ 12 = ?",
+      "it": "Calcolo lampo: 144 ÷ 12 = ?"
+    },
+    "answers": [
+      "12"
+    ]
+  },
+  {
+    "id": "math-010",
+    "type": "math",
+    "prompt": {
+      "en": "Quick math: 3 × (18 - 5) = ?",
+      "it": "Calcolo lampo: 3 × (18 - 5) = ?"
+    },
+    "answers": [
+      "39"
+    ]
+  },
+  {
+    "id": "math-011",
+    "type": "math",
+    "prompt": {
+      "en": "Quick math: 25 + 25 + 25 = ?",
+      "it": "Calcolo lampo: 25 + 25 + 25 = ?"
+    },
+    "answers": [
+      "75"
+    ]
+  },
+  {
+    "id": "math-012",
+    "type": "math",
+    "prompt": {
+      "en": "Quick math: 90 ÷ 5 + 2 = ?",
+      "it": "Calcolo lampo: 90 ÷ 5 + 2 = ?"
+    },
+    "answers": [
+      "20"
+    ]
+  },
+  {
+    "id": "math-013",
+    "type": "math",
+    "prompt": {
+      "en": "Quick math: 11 × 11 = ?",
+      "it": "Calcolo lampo: 11 × 11 = ?"
+    },
+    "answers": [
+      "121"
+    ]
+  },
+  {
+    "id": "math-014",
+    "type": "math",
+    "prompt": {
+      "en": "Quick math: 200 - 123 = ?",
+      "it": "Calcolo lampo: 200 - 123 = ?"
+    },
+    "answers": [
+      "77"
+    ]
+  },
+  {
+    "id": "math-015",
+    "type": "math",
+    "prompt": {
+      "en": "Quick math: 6 × 9 - 4 = ?",
+      "it": "Calcolo lampo: 6 × 9 - 4 = ?"
+    },
+    "answers": [
+      "50"
+    ]
+  },
+  {
+    "id": "math-016",
+    "type": "math",
+    "prompt": {
+      "en": "Quick math: (42 + 18) ÷ 6 = ?",
+      "it": "Calcolo lampo: (42 + 18) ÷ 6 = ?"
+    },
+    "answers": [
+      "10"
+    ]
+  },
+  {
+    "id": "math-017",
+    "type": "math",
+    "prompt": {
+      "en": "Quick math: 15 × 4 + 3 = ?",
+      "it": "Calcolo lampo: 15 × 4 + 3 = ?"
+    },
+    "answers": [
+      "63"
+    ]
+  },
+  {
+    "id": "math-018",
+    "type": "math",
+    "prompt": {
+      "en": "Quick math: 72 ÷ 9 + 11 = ?",
+      "it": "Calcolo lampo: 72 ÷ 9 + 11 = ?"
+    },
+    "answers": [
+      "19"
+    ]
+  },
+  {
+    "id": "math-019",
+    "type": "math",
+    "prompt": {
+      "en": "Quick math: 13 + 28 - 9 = ?",
+      "it": "Calcolo lampo: 13 + 28 - 9 = ?"
+    },
+    "answers": [
+      "32"
+    ]
+  },
+  {
+    "id": "math-020",
+    "type": "math",
+    "prompt": {
+      "en": "Quick math: 5 × (7 + 8) = ?",
+      "it": "Calcolo lampo: 5 × (7 + 8) = ?"
+    },
+    "answers": [
+      "75"
+    ]
+  },
+  {
+    "id": "math-021",
+    "type": "math",
+    "prompt": {
+      "en": "Quick math: 64 ÷ 4 - 3 = ?",
+      "it": "Calcolo lampo: 64 ÷ 4 - 3 = ?"
+    },
+    "answers": [
+      "13"
+    ]
+  },
+  {
+    "id": "math-022",
+    "type": "math",
+    "prompt": {
+      "en": "Quick math: 99 - 11 × 3 = ?",
+      "it": "Calcolo lampo: 99 - 11 × 3 = ?"
+    },
+    "answers": [
+      "66"
+    ]
+  },
+  {
+    "id": "math-023",
+    "type": "math",
+    "prompt": {
+      "en": "Quick math: (16 - 7) × 6 = ?",
+      "it": "Calcolo lampo: (16 - 7) × 6 = ?"
+    },
+    "answers": [
+      "54"
+    ]
+  },
+  {
+    "id": "math-024",
+    "type": "math",
+    "prompt": {
+      "en": "Quick math: 2 × 3 × 7 = ?",
+      "it": "Calcolo lampo: 2 × 3 × 7 = ?"
+    },
+    "answers": [
+      "42"
+    ]
+  },
+  {
+    "id": "math-025",
+    "type": "math",
+    "prompt": {
+      "en": "Quick math: 120 ÷ 10 + 8 = ?",
+      "it": "Calcolo lampo: 120 ÷ 10 + 8 = ?"
+    },
+    "answers": [
+      "20"
+    ]
+  },
+  {
+    "id": "math-026",
+    "type": "math",
+    "prompt": {
+      "en": "Quick math: 18 + 18 + 18 = ?",
+      "it": "Calcolo lampo: 18 + 18 + 18 = ?"
+    },
+    "answers": [
+      "54"
+    ]
+  },
+  {
+    "id": "math-027",
+    "type": "math",
+    "prompt": {
+      "en": "Quick math: 7 × 12 - 10 = ?",
+      "it": "Calcolo lampo: 7 × 12 - 10 = ?"
+    },
+    "answers": [
+      "74"
+    ]
+  },
+  {
+    "id": "math-028",
+    "type": "math",
+    "prompt": {
+      "en": "Quick math: (55 - 5) ÷ 5 = ?",
+      "it": "Calcolo lampo: (55 - 5) ÷ 5 = ?"
+    },
+    "answers": [
+      "10"
+    ]
+  },
+  {
+    "id": "math-029",
+    "type": "math",
+    "prompt": {
+      "en": "Quick math: 31 + 24 + 15 = ?",
+      "it": "Calcolo lampo: 31 + 24 + 15 = ?"
+    },
+    "answers": [
+      "70"
+    ]
+  },
+  {
+    "id": "math-030",
+    "type": "math",
+    "prompt": {
+      "en": "Quick math: 9 × 8 - 17 = ?",
+      "it": "Calcolo lampo: 9 × 8 - 17 = ?"
+    },
+    "answers": [
+      "55"
+    ]
+  },
+  {
+    "id": "type-race-001",
+    "type": "type-race",
+    "prompt": {
+      "en": "Type race! First to type: chat takes the crown",
+      "it": "Gara di scrittura! Scrivi per primo: la chat conquista la corona"
+    },
+    "answers": [
+      "chat takes the crown",
+      "la chat conquista la corona"
+    ]
+  },
+  {
+    "id": "type-race-002",
+    "type": "type-race",
+    "prompt": {
+      "en": "Type race! First to type: tiny pixels big energy",
+      "it": "Gara di scrittura! Scrivi per primo: piccoli pixel grande energia"
+    },
+    "answers": [
+      "tiny pixels big energy",
+      "piccoli pixel grande energia"
+    ]
+  },
+  {
+    "id": "type-race-003",
+    "type": "type-race",
+    "prompt": {
+      "en": "Type race! First to type: one crew one dream",
+      "it": "Gara di scrittura! Scrivi per primo: una squadra un sogno"
+    },
+    "answers": [
+      "one crew one dream",
+      "una squadra un sogno"
+    ]
+  },
+  {
+    "id": "type-race-004",
+    "type": "type-race",
+    "prompt": {
+      "en": "Type race! First to type: the bar goes brr",
+      "it": "Gara di scrittura! Scrivi per primo: la barra prende il volo"
+    },
+    "answers": [
+      "the bar goes brr",
+      "la barra prende il volo"
+    ]
+  },
+  {
+    "id": "type-race-005",
+    "type": "type-race",
+    "prompt": {
+      "en": "Type race! First to type: mint condition",
+      "it": "Gara di scrittura! Scrivi per primo: menta in forma"
+    },
+    "answers": [
+      "mint condition",
+      "menta in forma"
+    ]
+  },
+  {
+    "id": "type-race-006",
+    "type": "type-race",
+    "prompt": {
+      "en": "Type race! First to type: coral comeback",
+      "it": "Gara di scrittura! Scrivi per primo: rimonta corallo"
+    },
+    "answers": [
+      "coral comeback",
+      "rimonta corallo"
+    ]
+  },
+  {
+    "id": "type-race-007",
+    "type": "type-race",
+    "prompt": {
+      "en": "Type race! First to type: keyboard confetti",
+      "it": "Gara di scrittura! Scrivi per primo: coriandoli da tastiera"
+    },
+    "answers": [
+      "keyboard confetti",
+      "coriandoli da tastiera"
+    ]
+  },
+  {
+    "id": "type-race-008",
+    "type": "type-race",
+    "prompt": {
+      "en": "Type race! First to type: power to the chat",
+      "it": "Gara di scrittura! Scrivi per primo: potere alla chat"
+    },
+    "answers": [
+      "power to the chat",
+      "potere alla chat"
+    ]
+  },
+  {
+    "id": "type-race-009",
+    "type": "type-race",
+    "prompt": {
+      "en": "Type race! First to type: every voice counts",
+      "it": "Gara di scrittura! Scrivi per primo: ogni voce conta"
+    },
+    "answers": [
+      "every voice counts",
+      "ogni voce conta"
+    ]
+  },
+  {
+    "id": "type-race-010",
+    "type": "type-race",
+    "prompt": {
+      "en": "Type race! First to type: spark the clash",
+      "it": "Gara di scrittura! Scrivi per primo: accendi la sfida"
+    },
+    "answers": [
+      "spark the clash",
+      "accendi la sfida"
+    ]
+  },
+  {
+    "id": "type-race-011",
+    "type": "type-race",
+    "prompt": {
+      "en": "Type race! First to type: full combo unlocked",
+      "it": "Gara di scrittura! Scrivi per primo: combo completa sbloccata"
+    },
+    "answers": [
+      "full combo unlocked",
+      "combo completa sbloccata"
+    ]
+  },
+  {
+    "id": "type-race-012",
+    "type": "type-race",
+    "prompt": {
+      "en": "Type race! First to type: we brought the hype",
+      "it": "Gara di scrittura! Scrivi per primo: abbiamo portato la carica"
+    },
+    "answers": [
+      "we brought the hype",
+      "abbiamo portato la carica"
+    ]
+  },
+  {
+    "id": "type-race-013",
+    "type": "type-race",
+    "prompt": {
+      "en": "Type race! First to type: no sleepy pixels",
+      "it": "Gara di scrittura! Scrivi per primo: nessun pixel assonnato"
+    },
+    "answers": [
+      "no sleepy pixels",
+      "nessun pixel assonnato"
+    ]
+  },
+  {
+    "id": "type-race-014",
+    "type": "type-race",
+    "prompt": {
+      "en": "Type race! First to type: press play together",
+      "it": "Gara di scrittura! Scrivi per primo: premiamo play insieme"
+    },
+    "answers": [
+      "press play together",
+      "premiamo play insieme"
+    ]
+  },
+  {
+    "id": "type-race-015",
+    "type": "type-race",
+    "prompt": {
+      "en": "Type race! First to type: rally the crew",
+      "it": "Gara di scrittura! Scrivi per primo: raduna la squadra"
+    },
+    "answers": [
+      "rally the crew",
+      "raduna la squadra"
+    ]
+  },
+  {
+    "id": "type-race-016",
+    "type": "type-race",
+    "prompt": {
+      "en": "Type race! First to type: the comeback club",
+      "it": "Gara di scrittura! Scrivi per primo: il club delle rimonte"
+    },
+    "answers": [
+      "the comeback club",
+      "il club delle rimonte"
+    ]
+  },
+  {
+    "id": "type-race-017",
+    "type": "type-race",
+    "prompt": {
+      "en": "Type race! First to type: three two chat",
+      "it": "Gara di scrittura! Scrivi per primo: tre due chat"
+    },
+    "answers": [
+      "three two chat",
+      "tre due chat"
+    ]
+  },
+  {
+    "id": "type-race-018",
+    "type": "type-race",
+    "prompt": {
+      "en": "Type race! First to type: more noise more points",
+      "it": "Gara di scrittura! Scrivi per primo: più voci più punti"
+    },
+    "answers": [
+      "more noise more points",
+      "più voci più punti"
+    ]
+  },
+  {
+    "id": "type-race-019",
+    "type": "type-race",
+    "prompt": {
+      "en": "Type race! First to type: ready set clash",
+      "it": "Gara di scrittura! Scrivi per primo: pronti partenza sfida"
+    },
+    "answers": [
+      "ready set clash",
+      "pronti partenza sfida"
+    ]
+  },
+  {
+    "id": "type-race-020",
+    "type": "type-race",
+    "prompt": {
+      "en": "Type race! First to type: little spark big clash",
+      "it": "Gara di scrittura! Scrivi per primo: piccola scintilla grande sfida"
+    },
+    "answers": [
+      "little spark big clash",
+      "piccola scintilla grande sfida"
+    ]
+  },
+  {
+    "id": "type-race-021",
+    "type": "type-race",
+    "prompt": {
+      "en": "Type race! First to type: send the good vibes",
+      "it": "Gara di scrittura! Scrivi per primo: manda le vibrazioni positive"
+    },
+    "answers": [
+      "send the good vibes",
+      "manda le vibrazioni positive"
+    ]
+  },
+  {
+    "id": "type-race-022",
+    "type": "type-race",
+    "prompt": {
+      "en": "Type race! First to type: teamwork makes sparks",
+      "it": "Gara di scrittura! Scrivi per primo: la squadra fa scintille"
+    },
+    "answers": [
+      "teamwork makes sparks",
+      "la squadra fa scintille"
+    ]
+  },
+  {
+    "id": "type-race-023",
+    "type": "type-race",
+    "prompt": {
+      "en": "Type race! First to type: champions in the chat",
+      "it": "Gara di scrittura! Scrivi per primo: campioni nella chat"
+    },
+    "answers": [
+      "champions in the chat",
+      "campioni nella chat"
+    ]
+  },
+  {
+    "id": "type-race-024",
+    "type": "type-race",
+    "prompt": {
+      "en": "Type race! First to type: keep the combo alive",
+      "it": "Gara di scrittura! Scrivi per primo: tieni viva la combo"
+    },
+    "answers": [
+      "keep the combo alive",
+      "tieni viva la combo"
+    ]
+  },
+  {
+    "id": "type-race-025",
+    "type": "type-race",
+    "prompt": {
+      "en": "Type race! First to type: the final push",
+      "it": "Gara di scrittura! Scrivi per primo: la spinta finale"
+    },
+    "answers": [
+      "the final push",
+      "la spinta finale"
+    ]
+  },
+  {
+    "id": "type-race-026",
+    "type": "type-race",
+    "prompt": {
+      "en": "Type race! First to type: hype has entered chat",
+      "it": "Gara di scrittura! Scrivi per primo: la carica entra in chat"
+    },
+    "answers": [
+      "hype has entered chat",
+      "la carica entra in chat"
+    ]
+  },
+  {
+    "id": "type-race-027",
+    "type": "type-race",
+    "prompt": {
+      "en": "Type race! First to type: a very loud hello",
+      "it": "Gara di scrittura! Scrivi per primo: un saluto molto forte"
+    },
+    "answers": [
+      "a very loud hello",
+      "un saluto molto forte"
+    ]
+  },
+  {
+    "id": "type-race-028",
+    "type": "type-race",
+    "prompt": {
+      "en": "Type race! First to type: victory tastes like pixels",
+      "it": "Gara di scrittura! Scrivi per primo: la vittoria sa di pixel"
+    },
+    "answers": [
+      "victory tastes like pixels",
+      "la vittoria sa di pixel"
+    ]
+  },
+  {
+    "id": "type-race-029",
+    "type": "type-race",
+    "prompt": {
+      "en": "Type race! First to type: community over coins",
+      "it": "Gara di scrittura! Scrivi per primo: la comunità prima delle monete"
+    },
+    "answers": [
+      "community over coins",
+      "la comunità prima delle monete"
+    ]
+  },
+  {
+    "id": "type-race-030",
+    "type": "type-race",
+    "prompt": {
+      "en": "Type race! First to type: see you at the finish",
+      "it": "Gara di scrittura! Scrivi per primo: ci vediamo al traguardo"
+    },
+    "answers": [
+      "see you at the finish",
+      "ci vediamo al traguardo"
+    ]
+  },
+  {
+    "id": "emote-target-001",
+    "type": "emote-target",
+    "prompt": {
+      "en": "Emote rally! First team with 10 different users sending CLASH within 10 seconds wins.",
+      "it": "Raduno emote! Vince la prima squadra con 10 utenti diversi che inviano CLASH entro 10 secondi."
+    },
+    "answers": [],
+    "emote": "CLASH"
+  },
+  {
+    "id": "emote-target-002",
+    "type": "emote-target",
+    "prompt": {
+      "en": "Emote rally! First team with 10 different users sending SPARK within 10 seconds wins.",
+      "it": "Raduno emote! Vince la prima squadra con 10 utenti diversi che inviano SPARK entro 10 secondi."
+    },
+    "answers": [],
+    "emote": "SPARK"
+  },
+  {
+    "id": "emote-target-003",
+    "type": "emote-target",
+    "prompt": {
+      "en": "Emote rally! First team with 10 different users sending HYPE within 10 seconds wins.",
+      "it": "Raduno emote! Vince la prima squadra con 10 utenti diversi che inviano HYPE entro 10 secondi."
+    },
+    "answers": [],
+    "emote": "HYPE"
+  },
+  {
+    "id": "emote-target-004",
+    "type": "emote-target",
+    "prompt": {
+      "en": "Emote rally! First team with 10 different users sending CHEER within 10 seconds wins.",
+      "it": "Raduno emote! Vince la prima squadra con 10 utenti diversi che inviano CHEER entro 10 secondi."
+    },
+    "answers": [],
+    "emote": "CHEER"
+  },
+  {
+    "id": "emote-target-005",
+    "type": "emote-target",
+    "prompt": {
+      "en": "Emote rally! First team with 10 different users sending BOOST within 10 seconds wins.",
+      "it": "Raduno emote! Vince la prima squadra con 10 utenti diversi che inviano BOOST entro 10 secondi."
+    },
+    "answers": [],
+    "emote": "BOOST"
+  },
+  {
+    "id": "emote-target-006",
+    "type": "emote-target",
+    "prompt": {
+      "en": "Emote rally! First team with 10 different users sending RALLY within 10 seconds wins.",
+      "it": "Raduno emote! Vince la prima squadra con 10 utenti diversi che inviano RALLY entro 10 secondi."
+    },
+    "answers": [],
+    "emote": "RALLY"
+  },
+  {
+    "id": "emote-target-007",
+    "type": "emote-target",
+    "prompt": {
+      "en": "Emote rally! First team with 10 different users sending GG within 10 seconds wins.",
+      "it": "Raduno emote! Vince la prima squadra con 10 utenti diversi che inviano GG entro 10 secondi."
+    },
+    "answers": [],
+    "emote": "GG"
+  },
+  {
+    "id": "emote-target-008",
+    "type": "emote-target",
+    "prompt": {
+      "en": "Emote rally! First team with 10 different users sending WAVE within 10 seconds wins.",
+      "it": "Raduno emote! Vince la prima squadra con 10 utenti diversi che inviano WAVE entro 10 secondi."
+    },
+    "answers": [],
+    "emote": "WAVE"
+  },
+  {
+    "id": "emote-target-009",
+    "type": "emote-target",
+    "prompt": {
+      "en": "Emote rally! First team with 10 different users sending FIRE within 10 seconds wins.",
+      "it": "Raduno emote! Vince la prima squadra con 10 utenti diversi che inviano FIRE entro 10 secondi."
+    },
+    "answers": [],
+    "emote": "FIRE"
+  },
+  {
+    "id": "emote-target-010",
+    "type": "emote-target",
+    "prompt": {
+      "en": "Emote rally! First team with 10 different users sending STAR within 10 seconds wins.",
+      "it": "Raduno emote! Vince la prima squadra con 10 utenti diversi che inviano STAR entro 10 secondi."
+    },
+    "answers": [],
+    "emote": "STAR"
+  },
+  {
+    "id": "emote-target-011",
+    "type": "emote-target",
+    "prompt": {
+      "en": "Emote rally! First team with 10 different users sending COMBO within 10 seconds wins.",
+      "it": "Raduno emote! Vince la prima squadra con 10 utenti diversi che inviano COMBO entro 10 secondi."
+    },
+    "answers": [],
+    "emote": "COMBO"
+  },
+  {
+    "id": "emote-target-012",
+    "type": "emote-target",
+    "prompt": {
+      "en": "Emote rally! First team with 10 different users sending GO within 10 seconds wins.",
+      "it": "Raduno emote! Vince la prima squadra con 10 utenti diversi che inviano GO entro 10 secondi."
+    },
+    "answers": [],
+    "emote": "GO"
+  },
+  {
+    "id": "emote-target-013",
+    "type": "emote-target",
+    "prompt": {
+      "en": "Emote rally! First team with 10 different users sending WOW within 10 seconds wins.",
+      "it": "Raduno emote! Vince la prima squadra con 10 utenti diversi che inviano WOW entro 10 secondi."
+    },
+    "answers": [],
+    "emote": "WOW"
+  },
+  {
+    "id": "emote-target-014",
+    "type": "emote-target",
+    "prompt": {
+      "en": "Emote rally! First team with 10 different users sending POWER within 10 seconds wins.",
+      "it": "Raduno emote! Vince la prima squadra con 10 utenti diversi che inviano POWER entro 10 secondi."
+    },
+    "answers": [],
+    "emote": "POWER"
+  },
+  {
+    "id": "emote-target-015",
+    "type": "emote-target",
+    "prompt": {
+      "en": "Emote rally! First team with 10 different users sending CREW within 10 seconds wins.",
+      "it": "Raduno emote! Vince la prima squadra con 10 utenti diversi che inviano CREW entro 10 secondi."
+    },
+    "answers": [],
+    "emote": "CREW"
+  },
+  {
+    "id": "emote-target-016",
+    "type": "emote-target",
+    "prompt": {
+      "en": "Emote rally! First team with 10 different users sending VIBE within 10 seconds wins.",
+      "it": "Raduno emote! Vince la prima squadra con 10 utenti diversi che inviano VIBE entro 10 secondi."
+    },
+    "answers": [],
+    "emote": "VIBE"
+  },
+  {
+    "id": "emote-target-017",
+    "type": "emote-target",
+    "prompt": {
+      "en": "Emote rally! First team with 10 different users sending BOOM within 10 seconds wins.",
+      "it": "Raduno emote! Vince la prima squadra con 10 utenti diversi che inviano BOOM entro 10 secondi."
+    },
+    "answers": [],
+    "emote": "BOOM"
+  },
+  {
+    "id": "emote-target-018",
+    "type": "emote-target",
+    "prompt": {
+      "en": "Emote rally! First team with 10 different users sending PUSH within 10 seconds wins.",
+      "it": "Raduno emote! Vince la prima squadra con 10 utenti diversi che inviano PUSH entro 10 secondi."
+    },
+    "answers": [],
+    "emote": "PUSH"
+  },
+  {
+    "id": "emote-target-019",
+    "type": "emote-target",
+    "prompt": {
+      "en": "Emote rally! First team with 10 different users sending GLOW within 10 seconds wins.",
+      "it": "Raduno emote! Vince la prima squadra con 10 utenti diversi che inviano GLOW entro 10 secondi."
+    },
+    "answers": [],
+    "emote": "GLOW"
+  },
+  {
+    "id": "emote-target-020",
+    "type": "emote-target",
+    "prompt": {
+      "en": "Emote rally! First team with 10 different users sending ZIP within 10 seconds wins.",
+      "it": "Raduno emote! Vince la prima squadra con 10 utenti diversi che inviano ZIP entro 10 secondi."
+    },
+    "answers": [],
+    "emote": "ZIP"
+  },
+  {
+    "id": "emote-target-021",
+    "type": "emote-target",
+    "prompt": {
+      "en": "Emote rally! First team with 10 different users sending POP within 10 seconds wins.",
+      "it": "Raduno emote! Vince la prima squadra con 10 utenti diversi che inviano POP entro 10 secondi."
+    },
+    "answers": [],
+    "emote": "POP"
+  },
+  {
+    "id": "emote-target-022",
+    "type": "emote-target",
+    "prompt": {
+      "en": "Emote rally! First team with 10 different users sending ZAP within 10 seconds wins.",
+      "it": "Raduno emote! Vince la prima squadra con 10 utenti diversi che inviano ZAP entro 10 secondi."
+    },
+    "answers": [],
+    "emote": "ZAP"
+  },
+  {
+    "id": "emote-target-023",
+    "type": "emote-target",
+    "prompt": {
+      "en": "Emote rally! First team with 10 different users sending BOLT within 10 seconds wins.",
+      "it": "Raduno emote! Vince la prima squadra con 10 utenti diversi che inviano BOLT entro 10 secondi."
+    },
+    "answers": [],
+    "emote": "BOLT"
+  },
+  {
+    "id": "emote-target-024",
+    "type": "emote-target",
+    "prompt": {
+      "en": "Emote rally! First team with 10 different users sending WIN within 10 seconds wins.",
+      "it": "Raduno emote! Vince la prima squadra con 10 utenti diversi che inviano WIN entro 10 secondi."
+    },
+    "answers": [],
+    "emote": "WIN"
+  },
+  {
+    "id": "emote-target-025",
+    "type": "emote-target",
+    "prompt": {
+      "en": "Emote rally! First team with 10 different users sending LOUD within 10 seconds wins.",
+      "it": "Raduno emote! Vince la prima squadra con 10 utenti diversi che inviano LOUD entro 10 secondi."
+    },
+    "answers": [],
+    "emote": "LOUD"
+  },
+  {
+    "id": "emote-target-026",
+    "type": "emote-target",
+    "prompt": {
+      "en": "Emote rally! First team with 10 different users sending NICE within 10 seconds wins.",
+      "it": "Raduno emote! Vince la prima squadra con 10 utenti diversi che inviano NICE entro 10 secondi."
+    },
+    "answers": [],
+    "emote": "NICE"
+  },
+  {
+    "id": "emote-target-027",
+    "type": "emote-target",
+    "prompt": {
+      "en": "Emote rally! First team with 10 different users sending EPIC within 10 seconds wins.",
+      "it": "Raduno emote! Vince la prima squadra con 10 utenti diversi che inviano EPIC entro 10 secondi."
+    },
+    "answers": [],
+    "emote": "EPIC"
+  },
+  {
+    "id": "emote-target-028",
+    "type": "emote-target",
+    "prompt": {
+      "en": "Emote rally! First team with 10 different users sending JUMP within 10 seconds wins.",
+      "it": "Raduno emote! Vince la prima squadra con 10 utenti diversi che inviano JUMP entro 10 secondi."
+    },
+    "answers": [],
+    "emote": "JUMP"
+  },
+  {
+    "id": "emote-target-029",
+    "type": "emote-target",
+    "prompt": {
+      "en": "Emote rally! First team with 10 different users sending DASH within 10 seconds wins.",
+      "it": "Raduno emote! Vince la prima squadra con 10 utenti diversi che inviano DASH entro 10 secondi."
+    },
+    "answers": [],
+    "emote": "DASH"
+  },
+  {
+    "id": "emote-target-030",
+    "type": "emote-target",
+    "prompt": {
+      "en": "Emote rally! First team with 10 different users sending ROAR within 10 seconds wins.",
+      "it": "Raduno emote! Vince la prima squadra con 10 utenti diversi che inviano ROAR entro 10 secondi."
+    },
+    "answers": [],
+    "emote": "ROAR"
+  }
+]

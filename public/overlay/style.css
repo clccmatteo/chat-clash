@@ -1,0 +1,415 @@
+:root {
+  --ink: #111a1c;
+  --paper: #faf7eb;
+  --coral: #ff704f;
+  --mint: #5df3bd;
+  --muted: #a7b4af;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+  color: var(--paper);
+  font-family: "Avenir Next", "Trebuchet MS", sans-serif;
+}
+#arena {
+  width: 1920px;
+  height: 1080px;
+  position: absolute;
+  transform-origin: top left;
+  overflow: hidden;
+}
+.eyebrow {
+  font-family: "Courier New", monospace;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.scoreboard {
+  position: absolute;
+  top: 42px;
+  left: 64px;
+  right: 64px;
+  background: var(--ink);
+  border: 2px solid #f8f6ed30;
+  border-radius: 24px;
+  padding: 22px 28px 20px;
+  box-shadow: 0 8px 0 #0003;
+}
+.score-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px minmax(0, 1fr);
+  align-items: center;
+  gap: 30px;
+}
+.team {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-width: 0;
+}
+.team > div {
+  min-width: 0;
+}
+.team-a {
+  color: var(--coral);
+}
+.team-b {
+  color: var(--mint);
+  text-align: right;
+}
+.team .eyebrow span {
+  color: var(--muted);
+  letter-spacing: 0;
+  margin-left: 8px;
+  font-size: 16px;
+  display: inline-block;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: bottom;
+}
+.team h1 {
+  font-size: 39px;
+  font-weight: 850;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  margin: 9px 0 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.team strong {
+  font-family: Impact, "Arial Narrow", sans-serif;
+  font-size: 78px;
+  font-weight: 400;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.timer-wrap {
+  text-align: center;
+  border-left: 1px solid #ffffff24;
+  border-right: 1px solid #ffffff24;
+}
+.timer-wrap .eyebrow {
+  font-size: 14px;
+  color: var(--muted);
+}
+#timer {
+  font:
+    86px/1 Impact,
+    "Arial Narrow",
+    sans-serif;
+  letter-spacing: 1px;
+  font-variant-numeric: tabular-nums;
+  margin-top: 3px;
+}
+.meter {
+  display: flex;
+  height: 20px;
+  margin-top: 23px;
+  position: relative;
+  border-radius: 7px;
+  overflow: visible;
+  background: var(--mint);
+}
+#bar-a {
+  width: 50%;
+  background: var(--coral);
+  border-radius: 6px 0 0 6px;
+  transition: width 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+#bar-b {
+  flex: 1;
+  background: var(--mint);
+  border-radius: 0 6px 6px 0;
+}
+#bar-spark {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(9deg);
+  font-size: 46px;
+  color: var(--paper);
+  text-shadow:
+    3px 3px var(--ink),
+    -3px -3px var(--ink);
+  transition: left 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.phase-wrap {
+  position: absolute;
+  top: 258px;
+  width: 100%;
+  text-align: center;
+}
+.phase {
+  display: inline-block;
+  padding: 10px 29px;
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: 8px;
+  font:
+    29px/1.1 Impact,
+    "Arial Narrow",
+    sans-serif;
+  letter-spacing: 2px;
+  box-shadow: 0 4px 0 #0004;
+}
+.phase-wrap p {
+  display: table;
+  margin: 13px auto 0;
+  background: var(--ink);
+  border-radius: 6px;
+  padding: 7px 15px;
+  font-size: 19px;
+  font-weight: 700;
+}
+.phase.rush {
+  background: var(--coral);
+  animation: pulse 1s ease-in-out infinite;
+}
+.phase.flash {
+  background: var(--mint);
+}
+.challenge-card,
+.verdict-card {
+  position: absolute;
+  top: 380px;
+  left: 490px;
+  width: 940px;
+  background: var(--ink);
+  border: 2px solid var(--paper);
+  border-radius: 20px;
+  padding: 30px 36px;
+  text-align: center;
+  box-shadow: 0 10px 0 #0003;
+}
+.card-kicker {
+  display: flex;
+  justify-content: space-between;
+  color: var(--mint);
+  font:
+    700 17px/1.5 "Courier New",
+    monospace;
+  letter-spacing: 2px;
+}
+.card-kicker strong {
+  background: var(--mint);
+  padding: 1px 10px;
+  color: var(--ink);
+  border-radius: 4px;
+}
+.challenge-card h2 {
+  font-size: 38px;
+  line-height: 1.2;
+  margin: 20px 0 12px;
+}
+.challenge-card p {
+  font-size: 19px;
+  color: var(--muted);
+  margin: 0 0 20px;
+}
+.challenge-counts {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 800;
+  font-size: 21px;
+}
+.challenge-counts span:first-child {
+  color: var(--coral);
+}
+.challenge-counts span:last-child {
+  color: var(--mint);
+}
+.verdict-card {
+  padding: 24px 30px;
+}
+.verdict-card h2 {
+  font:
+    54px/1.1 Impact,
+    "Arial Narrow",
+    sans-serif;
+  margin: 12px 0;
+  overflow-wrap: anywhere;
+}
+.verdict-card p {
+  font-size: 20px;
+  margin: 10px 0;
+}
+.verdict-card ol {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  font-size: 19px;
+  display: grid;
+  gap: 6px;
+  margin: 14px 0;
+}
+.verdict-card li {
+  background: #ffffff0d;
+  padding: 8px 14px;
+  border-radius: 5px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.verdict-card li b {
+  color: var(--mint);
+  white-space: nowrap;
+}
+.verdict-card li small {
+  margin-left: auto;
+  white-space: nowrap;
+}
+#voluntary {
+  font-size: 15px;
+  color: var(--muted);
+}
+.mvp {
+  position: absolute;
+  bottom: 52px;
+  width: 438px;
+  background: var(--ink);
+  padding: 20px 24px;
+  border-radius: 16px;
+  border-top: 5px solid var(--coral);
+}
+.mvp-a {
+  left: 64px;
+}
+.mvp-b {
+  right: 64px;
+  border-color: var(--mint);
+}
+.mvp-heading {
+  display: flex;
+  justify-content: space-between;
+  font:
+    700 15px/1 "Courier New",
+    monospace;
+  letter-spacing: 1px;
+  color: var(--coral);
+}
+.mvp-b .mvp-heading {
+  color: var(--mint);
+}
+.mvp-heading span:last-child {
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0;
+}
+.mvp ol {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  display: grid;
+  gap: 10px;
+}
+.mvp li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 21px;
+  min-width: 0;
+  height: 28px;
+}
+.mvp li .rank {
+  color: var(--muted);
+  font-family: "Courier New", monospace;
+  font-size: 16px;
+}
+.mvp li .username {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  font-weight: 700;
+}
+.mvp li strong {
+  font-family: "Courier New", monospace;
+  font-size: 21px;
+}
+.brand {
+  position: absolute;
+  bottom: 64px;
+  left: 720px;
+  width: 480px;
+  text-align: center;
+}
+.brand img {
+  display: block;
+  object-fit: contain;
+  margin: 0 auto 7px;
+}
+.brand span {
+  font:
+    27px/1 Impact,
+    "Arial Narrow",
+    sans-serif;
+  letter-spacing: 3px;
+  display: table;
+  margin: auto;
+  padding: 6px 12px;
+  background: var(--ink);
+  border-radius: 5px;
+}
+.brand small {
+  display: table;
+  margin: 8px auto 0;
+  font:
+    11px/1.2 "Courier New",
+    monospace;
+  letter-spacing: 1px;
+  background: var(--ink);
+  padding: 5px 9px;
+  border-radius: 4px;
+}
+.connection {
+  position: absolute;
+  z-index: 2;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font:
+    700 14px "Courier New",
+    monospace;
+  background: var(--coral);
+  padding: 5px 12px;
+  color: var(--ink);
+  border-radius: 4px;
+}
+[hidden] {
+  display: none !important;
+}
+@keyframes pulse {
+  50% {
+    box-shadow: 0 0 0 6px #ff704f44;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+.verdict-card ol.many-options {
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.verdict-card .many-options li {
+  font-size: 16px;
+  min-width: 0;
+  padding: 8px 10px;
+}
+.verdict-card .many-options li span {
+  overflow-wrap: anywhere;
+}

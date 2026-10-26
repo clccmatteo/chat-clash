@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chat Clash · Live overlay</title>
+    <link rel="icon" href="/brand/favicon.ico" />
+    <link rel="stylesheet" href="/overlay/style.css" />
+    <script type="module" src="/overlay/app.js"></script>
+  </head>
+  <body>
+    <main id="arena" aria-label="Chat Clash live scoreboard">
+      <div id="connection" role="status" class="connection">
+        CONNECTING TO ARENA
+      </div>
+      <section class="scoreboard" aria-label="Team scores">
+        <div class="score-head">
+          <div class="team team-a">
+            <div>
+              <span class="eyebrow"
+                >TEAM A <span id="channel-a">@coralcrew</span></span
+              >
+              <h1 id="name-a">Coral Crew</h1>
+            </div>
+            <strong id="score-a">0</strong>
+          </div>
+          <div class="timer-wrap">
+            <span class="eyebrow" id="timer-label">ROUND 01</span>
+            <div id="timer" role="timer" aria-label="Time remaining">03:00</div>
+          </div>
+          <div class="team team-b">
+            <strong id="score-b">0</strong>
+            <div>
+              <span class="eyebrow"
+                >TEAM B <span id="channel-b">@mintmob</span></span
+              >
+              <h1 id="name-b">Mint Mob</h1>
+            </div>
+          </div>
+        </div>
+        <div class="meter" role="img" id="meter" aria-label="Score balance">
+          <div id="bar-a"></div>
+          <div id="bar-b"></div>
+          <span id="bar-spark">✦</span>
+        </div>
+      </section>
+      <div class="phase-wrap">
+        <div id="phase" role="status" class="phase">READY TO CLASH</div>
+        <p id="phase-detail">Every voice counts.</p>
+      </div>
+      <section
+        id="challenge-card"
+        class="challenge-card"
+        aria-label="Flash challenge"
+        hidden
+      >
+        <div class="card-kicker">
+          <span id="challenge-type">FLASH CHALLENGE</span
+          ><strong id="challenge-bonus">+25 PTS</strong>
+        </div>
+        <h2 id="challenge-prompt"></h2>
+        <p id="challenge-rule"></p>
+        <div class="challenge-counts">
+          <span id="answers-a">0 correct</span
+          ><span id="challenge-clock">00:30</span
+          ><span id="answers-b">0 correct</span>
+        </div>
+      </section>
+      <section
+        id="verdict-card"
+        class="verdict-card"
+        aria-label="Round verdict"
+        hidden
+      >
+        <span class="eyebrow">THE CHAT HAS SPOKEN</span>
+        <h2 id="verdict-title">WHAT A CLASH.</h2>
+        <p id="verdict-detail"></p>
+        <ol id="vote-options"></ol>
+        <p id="voluntary">
+          Safe, voluntary penalties. Approved before the round.
+        </p>
+      </section>
+      <section class="mvp mvp-a" aria-label="Team A top contributors">
+        <div class="mvp-heading">
+          <span>★ TEAM A MVPs</span><span id="people-a">0 PLAYERS</span>
+        </div>
+        <ol id="mvp-a"></ol>
+      </section>
+      <section class="mvp mvp-b" aria-label="Team B top contributors">
+        <div class="mvp-heading">
+          <span>★ TEAM B MVPs</span><span id="people-b">0 PLAYERS</span>
+        </div>
+        <ol id="mvp-b"></ol>
+      </section>
+      <div class="brand">
+        <img
+          src="/brand/logo.png"
+          alt="Chat Clash"
+          width="90"
+          height="90"
+        /><span>CHAT CLASH</span><small>THE MOST ACTIVE COMMUNITY WINS.</small>
+      </div>
+    </main>
+  </body>
+</html>

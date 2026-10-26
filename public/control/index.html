@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chat Clash · Match control</title>
+    <meta name="theme-color" content="#151e1b" />
+    <link rel="icon" href="/brand/favicon.ico" />
+    <link rel="stylesheet" href="/control/style.css" />
+    <script type="module" src="/control/app.js"></script>
+  </head>
+  <body>
+    <aside class="sidebar">
+      <a class="wordmark" href="/control/" aria-label="Chat Clash home"
+        ><img src="/brand/logo.png" alt="" width="76" height="76" /><span
+          >CHAT<br />CLASH<span class="wordmark-dot">✦</span></span
+        ></a
+      >
+      <div class="side-label">YOUR BROADCAST</div>
+      <a href="#arena" class="side-nav current"
+        ><span>↗</span> Match control <small>01</small></a
+      ><a href="#how-it-works" class="side-nav"><span>☷</span> How it works</a>
+      <div class="side-footer">
+        <div class="built-badge">BUILT WITH CODEX</div>
+        <p>Two communities.<br />One very loud battle.</p>
+        <small>TWITCHCON HACKATHON<br />MILESTONE 02 / 2026</small>
+      </div>
+    </aside>
+    <main id="arena">
+      <header class="topline">
+        <span class="breadcrumb">CHAT CLASH <span>/</span> THE ARENA</span
+        ><span class="connection" id="connection" role="status"
+          ><i></i> Connecting</span
+        >
+      </header>
+      <section class="hero">
+        <div>
+          <div class="kicker">LESS PAY-TO-WIN. MORE PEOPLE POWER.</div>
+          <h1>
+            THE CHAT HAS<br />THE <span>POWER.</span
+            ><span class="hero-spark">✦</span>
+          </h1>
+          <p>A three-minute battle. Two communities. Every voice counts.</p>
+        </div>
+        <a
+          class="button dark overlay-link"
+          href="/overlay/"
+          target="_blank"
+          rel="noopener"
+          >Open overlay <span>↗</span></a
+        >
+      </section>
+      <div id="notice" class="notice" role="status" hidden></div>
+      <div class="workspace">
+        <div class="left-column">
+          <section class="card preview-card" aria-label="Overlay preview">
+            <div class="card-head">
+              <h2><span class="live-dot"></span> LIVE OVERLAY</h2>
+              <span class="mini-label">1920 × 1080</span>
+            </div>
+            <div class="preview-wrap" id="preview-wrap">
+              <div class="stream-placeholder">
+                <span>YOUR STREAM GOES HERE</span
+                ><small>A little friendly chaos, on top.</small>
+              </div>
+              <iframe
+                id="preview"
+                src="/overlay/?preview=1"
+                title="Live OBS overlay preview"
+                width="1920"
+                height="1080"
+              ></iframe
+              ><span class="preview-caption"
+                >TRANSPARENT OBS BROWSER SOURCE</span
+              >
+            </div>
+            <div class="source-row">
+              <span>OBS source <code id="obs-url"></code></span
+              ><button type="button" class="text-button" id="copy-url">
+                Copy URL <span>⧉</span>
+              </button>
+            </div>
+          </section>
+          <section class="card round-card" aria-label="Round controls">
+            <div class="round-top">
+              <div>
+                <span class="mini-label">ROUND STATUS</span>
+                <h2 id="round-status">Ready when you are.</h2>
+              </div>
+              <strong id="round-clock">03:00</strong>
+            </div>
+            <div class="round-actions">
+              <button type="button" class="button coral" id="sim-start">
+                ▶ &nbsp; Start simulator</button
+              ><button type="button" class="button" id="start">
+                Start round</button
+              ><button type="button" class="button" id="stop" disabled>
+                ■ &nbsp; Stop</button
+              ><button
+                type="button"
+                class="icon-button"
+                id="reset"
+                title="Reset round"
+                aria-label="Reset round"
+              >
+                ↺
+              </button>
+            </div>
+            <p class="helper" id="round-hint">
+              Try a full battle with simulated chat. No Twitch connection
+              needed.
+            </p>
+            <div class="stats">
+              <div>
+                <strong id="stat-a">0</strong><span>TEAM A PLAYERS</span>
+              </div>
+              <div>
+                <strong id="stat-b">0</strong><span>TEAM B PLAYERS</span>
+              </div>
+              <div>
+                <strong id="stat-events">0</strong><span>EVENTS SCORED</span>
+              </div>
+              <div>
+                <strong id="stat-multiplier">1×</strong><span>MULTIPLIER</span>
+              </div>
+            </div>
+          </section>
+          <section class="card event-card" aria-label="Live event log">
+            <div class="card-head">
+              <h2>THE CHATTER</h2>
+              <span class="mini-label">SYSTEM + ACTIVITY LOG</span>
+            </div>
+            <ol id="event-log">
+              <li class="empty">Waiting for the first spark…</li>
+            </ol>
+            <div class="log-foot">
+              <span class="live-dot"></span> Raw chat stays off the overlay.
+            </div>
+          </section>
+        </div>
+        <div class="right-column">
+          <form id="settings-form" class="card settings-card">
+            <div class="card-head">
+              <h2>SET THE STAGE</h2>
+              <button class="text-button" id="save" type="submit">
+                Save settings ↗
+              </button>
+            </div>
+            <fieldset id="settings-fields">
+              <legend class="sr-only">Teams and simulator settings</legend>
+              <div class="team-fields team-a">
+                <span class="team-tag">A</span>
+                <div>
+                  <label for="name-a">Team A name</label
+                  ><input
+                    id="name-a"
+                    name="name-a"
+                    maxlength="32"
+                    required
+                    value="Coral Crew"
+                  /><label class="sr-only" for="channel-a"
+                    >Team A channel</label
+                  >
+                  <div class="channel-field">
+                    <span>@</span
+                    ><input
+                      id="channel-a"
+                      name="channel-a"
+                      pattern="[a-zA-Z0-9_]{1,25}"
+                      maxlength="25"
+                      required
+                      value="coralcrew"
+                      aria-label="Team A channel"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="versus"><span></span> VS <span></span></div>
+              <div class="team-fields team-b">
+                <span class="team-tag">B</span>
+                <div>
+                  <label for="name-b">Team B name</label
+                  ><input
+                    id="name-b"
+                    name="name-b"
+                    maxlength="32"
+                    required
+                    value="Mint Mob"
+                  /><label class="sr-only" for="channel-b"
+                    >Team B channel</label
+                  >
+                  <div class="channel-field">
+                    <span>@</span
+                    ><input
+                      id="channel-b"
+                      name="channel-b"
+                      pattern="[a-zA-Z0-9_]{1,25}"
+                      maxlength="25"
+                      required
+                      value="mintmob"
+                      aria-label="Team B channel"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="bot-setting">
+                <label for="bot-login"
+                  >Chat bot login <span>(blank follows Team A)</span></label
+                ><input
+                  id="bot-login"
+                  name="bot-login"
+                  pattern="[a-zA-Z0-9_]{0,25}"
+                  maxlength="25"
+                  placeholder="Use Team A broadcaster"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="challenge-setting">
+                <label for="next-challenge-type"
+                  >Next flash challenge<select id="next-challenge-type">
+                    <option value="">Random · all available types</option>
+                    <option value="trivia">Trivia</option>
+                    <option value="anagram">Anagram</option>
+                    <option value="math">Quick math</option>
+                    <option value="type-race">
+                      Type race · ideal for two-account test
+                    </option>
+                    <option value="emote-target">
+                      Emote target · needs 10 users
+                    </option>
+                  </select></label
+                >
+              </div>
+              <div class="select-row">
+                <label for="language"
+                  >Challenge language<select id="language">
+                    <option value="en">English</option>
+                    <option value="it">Italiano</option>
+                  </select></label
+                ><label for="speed"
+                  >Simulator speed<select id="speed">
+                    <option value="1">1× · Real time</option>
+                    <option value="4">4× · Quick demo</option>
+                    <option value="12">12× · Speed run</option>
+                  </select></label
+                >
+              </div>
+            </fieldset>
+            <p class="local-note">
+              <span>◉</span> Public Twitch app · device authorization · no
+              secret.
+            </p>
+          </form>
+          <section class="card twitch-card" aria-label="Twitch connections">
+            <div class="card-head">
+              <h2>CONNECT THE COMMUNITIES</h2>
+              <span class="mini-label" id="twitch-summary">NOT CONNECTED</span>
+            </div>
+            <p class="twitch-intro" id="twitch-setup">
+              Save your channel logins, then authorize each broadcaster. The
+              default bot shares Team A’s authorization.
+            </p>
+            <div id="twitch-accounts"></div>
+            <div id="device-authorizations" aria-live="polite"></div>
+            <p id="twitch-error" class="twitch-error" role="status" hidden></p>
+            <div class="twitch-footer">
+              <button type="button" class="text-button" id="twitch-reconnect">
+                Reconnect sockets ↗</button
+              ><span>Works with offline chat</span>
+            </div>
+          </section>
+          <section class="card penalty-card" aria-label="Approved penalties">
+            <div class="card-head">
+              <h2>FRIENDLY CONSEQUENCES</h2>
+              <span class="mini-label" id="penalty-count">3 SELECTED</span>
+            </div>
+            <p>
+              Winning chat gets 30 seconds to choose.<br />Keep it safe. Keep it
+              voluntary.
+            </p>
+            <fieldset id="penalty-fields">
+              <legend class="sr-only">Choose safe penalties</legend>
+              <div id="penalty-list"></div>
+              <div class="approvals">
+                <label
+                  ><input type="checkbox" id="approve-a" /> Team A approves this
+                  list</label
+                ><label
+                  ><input type="checkbox" id="approve-b" /> Team B approves this
+                  list</label
+                >
+              </div>
+            </fieldset>
+            <p class="helper">
+              Both approvals are required for a live round. The simulator uses
+              demo approvals.
+            </p>
+          </section>
+        </div>
+      </div>
+      <section id="how-it-works" class="how-it-works">
+        <div>
+          <div class="kicker">180 SECONDS OF COMMUNITY ENERGY</div>
+          <h2>LOUD CHAT. FAIR FIGHT.</h2>
+        </div>
+        <ol>
+          <li>
+            <b>01 / BATTLE</b
+            ><span>Messages, first voices and emote combos move the bar.</span>
+          </li>
+          <li>
+            <b>02 / FLASH · 1:30</b
+            ><span>A 30-second challenge. One community takes +25.</span>
+          </li>
+          <li>
+            <b>03 / RUSH · 2:30</b
+            ><span>Every point doubles. Bring the comeback.</span>
+          </li>
+          <li>
+            <b>04 / VERDICT · 3:00</b
+            ><span>The winning chat votes for a pre-approved penalty.</span>
+          </li>
+        </ol>
+      </section>
+      <footer class="page-footer">
+        <span>CHAT CLASH © 2026</span><span>COMMUNITY OVER COINS. ALWAYS.</span
+        ><span>NO AI CALLS AT RUNTIME.</span>
+      </footer>
+    </main>
+  </body>
+</html>

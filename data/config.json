@@ -1,0 +1,28 @@
+{
+  "timing": {
+    "flashStartMs": 90000,
+    "flashEndMs": 120000,
+    "flashResultMs": 8000,
+    "rushStartMs": 150000,
+    "roundMs": 180000,
+    "voteMs": 30000
+  },
+  "scoring": {
+    "message": 1,
+    "messageCooldownMs": 5000,
+    "firstParticipation": 3,
+    "comboUsers": 5,
+    "comboWindowMs": 10000,
+    "comboBonus": 10,
+    "redemption": 5,
+    "redemptionMaxPerUser": 3,
+    "bitsPerPoint": 100,
+    "bitsMaxPointsPerUser": 10,
+    "raidersPerPoint": 10,
+    "raidMaxPoints": 50,
+    "challengeBonus": 25,
+    "challengeEmoteUsers": 10,
+    "rushMultiplier": 2,
+    "mvpCount": 3
+  }
+}
