@@ -1,4 +1,4 @@
-# Milestone 2: test with two real accounts, without going live
+# Connect and test two real Twitch accounts
 
 This test uses offline Twitch chat rooms. No OBS broadcast, stream key, Bits
 purchase, Affiliate status, client secret or redirect server is required.
@@ -6,13 +6,14 @@ Keep the two channels out of a Shared Chat session for this first test.
 
 ## 1. Configure the public app
 
-The local `.env` has been created and is ignored by Git. Set the **real public
-Client ID** of the Twitch app registered as **Public**:
+Copy `.env.example` to `.env` if you do not already have a local `.env`. It is
+ignored by Git. Replace the placeholders with the **public Client ID** of your
+Twitch app registered as **Public** and your two channel logins:
 
 ```dotenv
 TWITCH_CLIENT_ID=your_actual_public_client_id
-TWITCH_TEAM_A_LOGIN=ilcoluc
-TWITCH_TEAM_B_LOGIN=ilcoluc_test
+TWITCH_TEAM_A_LOGIN=your_channel_a
+TWITCH_TEAM_B_LOGIN=your_channel_b
 TWITCH_BOT_LOGIN=
 TWITCH_TOKEN_FILE=.local/twitch-tokens.json
 ```
@@ -25,8 +26,8 @@ Finish creating the second account before its authorization step.
 From the project directory, using Node 22:
 
 ```sh
-npm install
-npm run dev
+npm ci
+npm start
 ```
 
 If the server is already running, stop that run first, then start it again and
@@ -35,16 +36,16 @@ refresh the control page. Environment changes are read at startup.
 ## 2. Prepare two browser sessions
 
 Open [the control panel](http://127.0.0.1:3000/control/).
-Check Team A's channel is `ilcoluc`, Team B's is `ilcoluc_test`, and the bot field
+Check Team A's channel is `your_channel_a`, Team B's is `your_channel_b`, and the bot field
 is blank. Change any login in the control panel and click **Save settings**.
 Control-panel changes apply to this server session; `.env` supplies startup defaults.
 
-Use one browser profile logged in as `ilcoluc` and another profile/private window
-logged in as `ilcoluc_test`. Open both accounts' offline chat rooms, for example
+Use one browser profile logged in as `your_channel_a` and another profile/private window
+logged in as `your_channel_b`. Open both accounts' offline chat rooms, for example
 the normal channel pages and their **Chat** tabs, or Twitch's popout chat:
 
-- [Team A chat](https://www.twitch.tv/popout/ilcoluc/chat?popout=)
-- [Team B chat](https://www.twitch.tv/popout/ilcoluc_test/chat?popout=)
+- [Team A chat](https://www.twitch.tv/popout/your_channel_a/chat?popout=)
+- [Team B chat](https://www.twitch.tv/popout/your_channel_b/chat?popout=)
 
 Use normal open chat for this test: follower/subscriber-only, slow, emote-only,
 unique-chat, bans and timeouts can prevent test messages or bot posts from landing.
@@ -53,7 +54,7 @@ The bot does **not** need to be made a moderator. Chat restrictions still apply.
 ## 3. Authorize Team A and the default bot
 
 Click **Authorize Team A**. The control panel displays a user code and an
-**Open twitch.tv/activate** link. Open that link in the `ilcoluc` browser session,
+**Open twitch.tv/activate** link. Open that link in the `your_channel_a` browser session,
 enter the displayed code if asked, review the permissions and approve it yourself.
 
 This single grant includes the broadcaster's `channel:bot`,
@@ -68,7 +69,7 @@ shown in the controls is the code Twitch expects you to type at activation.
 ## 4. Authorize Team B
 
 Click **Authorize Team B**, then activate **its** displayed code in the
-`ilcoluc_test` browser session. It needs only the broadcaster scopes above.
+`your_channel_b` browser session. It needs only the broadcaster scopes above.
 With the default bot, there are **two distinct account authorizations total**.
 If the bot is a third account, use its additional **Authorize bot** button once.
 

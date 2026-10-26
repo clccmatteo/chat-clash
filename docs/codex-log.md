@@ -1,6 +1,6 @@
 # Codex build log
 
-## 2026-10-25 — Milestone 1
+## 2026-10-25 — Game engine, simulator and local UI
 
 - Started from an empty workspace. Added Node 22 / strict TypeScript scaffold,
   native Node test runner, `ws`, `tsx`, and a single scoring/timing config.
@@ -47,11 +47,11 @@
 ### Current scope
 
 One local in-memory match, synthetic chat and demo approvals. No real Twitch
-connection, OAuth, chat sending, persistence or public deployment in milestone 1.
+connection, OAuth, chat sending, persistence or public deployment at that stage.
 Penalty outcomes are display-only and voluntary. Emote targets use synthetic
 metadata until the real adapter resolves native emotes. No runtime AI calls.
 
-## 2026-10-25 — Milestone 2
+## 2026-10-25 — Twitch connection and real-account checks
 
 - User specified a public Twitch client and Device Code Grant (no secret/redirect),
   configurable env/control logins, persistent local tokens, an optional separate bot,
@@ -93,13 +93,13 @@ metadata until the real adapter resolves native emotes. No runtime AI calls.
 ### Real-account connection setup
 
 - Restarted the development server after the user supplied the public Client ID.
-  Updated the ignored startup default for Team B to `ilcoluc_test` and aligned the
+  Updated the ignored startup default for Team B to `your_channel_b` and aligned the
   offline guide with the user's new account name.
-- Confirmed the saved `ilcoluc` grant restores successfully: real EventSub chat and
+- Confirmed the saved `your_channel_a` grant restores successfully: real EventSub chat and
   incoming-raid subscriptions are connected. Twitch reports the channel as
   non-Affiliate/Partner; optional Bits and points are unavailable as expected.
 - Requested Team B's device authorization in the local controls. After the user
-  completed Twitch approval, verified both `ilcoluc` and `ilcoluc_test` have real
+  completed Twitch approval, verified both `your_channel_a` and `your_channel_b` have real
   chat and incoming-raid subscriptions connected, no pending authorizations and no
   connection errors. Both channels are non-Affiliate/Partner. Selected a type-race
   challenge for the offline two-account test.
@@ -170,3 +170,16 @@ metadata until the real adapter resolves native emotes. No runtime AI calls.
   two-account evidence and the missed voting deadline.
 - Verification: all 50 tests and strict TypeScript pass on Node 22. Documentation
   only; no scoring, timing, architecture or Twitch integration changes.
+
+### Step 3 — Generic documentation
+
+- Replaced personal channel logins throughout tracked text, including historical
+  setup notes and popout-chat URLs, with `your_channel_a` / `your_channel_b`.
+  These stand for the two human-controlled test accounts, not literal accounts
+  that judges should authorize. The record of actual manual checks is preserved.
+- Made the setup guide start from `.env.example` only when `.env` is absent and
+  use the same `npm ci` / `npm start` path as the README. Left the private local
+  configuration untouched. `.env.example` contains variable names, blank values
+  and its documented local storage path only.
+- Verification: tracked-text scan found no personal channel logins; all 50 tests
+  and strict TypeScript pass on Node 22. No runtime behavior changed.
