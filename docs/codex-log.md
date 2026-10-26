@@ -238,3 +238,20 @@ metadata until the real adapter resolves native emotes. No runtime AI calls.
 - Verification: all 51 tests and strict TypeScript pass on Node 22; frontend
   module syntax passes. Actual OBS capture/compositing and compression remain
   manual recording checks. No real chat, deployment or push.
+
+### Step 7 — English submission drafts
+
+- Added docs/submission.md with tagline, features, engine/simulator/EventSub/
+  public Device Code OAuth/overlay architecture, safety/privacy, original content,
+  concrete Codex iterations from this log, judge testing and honest limitations.
+  Left explicit TODOs for the repository URL, actual session ID and YouTube URL.
+- Added a timestamped 2:45 shot-by-shot script, leaving margin under 2:50/3:00.
+  It edits a normal-speed 3:30 real round with elapsed-time labels and covers
+  real messages moving scores, flash, RUSH ×2, vote, penalty, OBS and actual Codex
+  development/test evidence. No runtime or rules changes.
+- Recording guidance requires own accounts, narration without music, crops that
+  exclude third-party marks/other streamers and all credentials, and no simulated
+  footage represented as live evidence. Session ID retrieval, recording/upload
+  and the final Devpost form remain human tasks; nothing has been submitted.
+- Verification: all 51 tests and strict TypeScript pass on Node 22. Script ends
+  at 2:45 and includes each requested shot. No deployment, remote or push.
