@@ -218,4 +218,12 @@ The [build log](docs/codex-log.md) records the work, verification and remaining 
 
 ## License
 
-To be selected before public release.
+[MIT](LICENSE) — Copyright (c) 2026 Matteo Colucci.
+
+The collision-bubble logo was generated for this project; all 160 bilingual
+challenge records and all eight penalty options are original project content.
+The shipped mark, challenge text and penalty catalog contain no third-party
+logos, characters or branded challenges. See [asset provenance](public/brand/README.md)
+and the authored source in `scripts/build-challenges.py`. Service names in the
+documentation identify integrations; live global emotes come from Twitch and are
+not shipped as original project art. Dependencies retain their own licenses.

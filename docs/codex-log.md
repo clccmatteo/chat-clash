@@ -183,3 +183,18 @@ metadata until the real adapter resolves native emotes. No runtime AI calls.
   and its documented local storage path only.
 - Verification: tracked-text scan found no personal channel logins; all 50 tests
   and strict TypeScript pass on Node 22. No runtime behavior changed.
+
+### Step 4 — License and content provenance
+
+- Added the MIT license with Copyright (c) 2026 Matteo Colucci; set the package
+  license to MIT in package.json and root lockfile metadata; updated README.
+- Inspected the logo and its recorded generation prompt, the complete authored
+  challenge generator and 160 generated EN/IT records, and all eight penalties.
+  The logo is an original generated collision-bubble mark; challenge/penalty text
+  is original project content. No third-party logo, character or branded challenge
+  appears in those shipped assets. Generic words are used in their ordinary sense.
+- Distinguished documentation's service references and runtime Twitch emote
+  metadata from the project's original artwork/content. Dependencies keep their
+  own licenses. No creative asset or game content needed replacement.
+- Verification: all 50 tests and strict TypeScript pass on Node 22. Dependencies,
+  challenge records, penalties and game configuration are unchanged.
