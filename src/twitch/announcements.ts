@@ -72,12 +72,12 @@ export function roundAnnouncements(
       both([it ? "Parità! Nessuna penitenza." : "It's a draw! No penalty."]);
     else {
       both([
-        `${name(state.winner)} ${it ? "vince!" : "wins!"} ${it ? "Solo la chat vincente vota la penitenza." : "Only the winning chat votes on the penalty."}`,
+        `${name(state.winner)} ${it ? "vince!" : "wins!"} ${it ? `VOTO APERTO: la chat vincente ha ${config.timing.voteMs / 1000} secondi per votare la penitenza.` : `VOTE OPEN: the winning chat has ${config.timing.voteMs / 1000} seconds to vote on the penalty.`}`,
       ]);
       for (const text of chunks([
         it
-          ? `Vota entro ${config.timing.voteMs / 1000}s con !vote NUMERO. Un voto a persona.`
-          : `Vote within ${config.timing.voteMs / 1000}s using !vote NUMBER. One vote per user.`,
+          ? `Hai ${config.timing.voteMs / 1000} secondi: vota ORA con !vote NUMERO. Un voto a persona.`
+          : `You have ${config.timing.voteMs / 1000} seconds: vote NOW using !vote NUMBER. One vote per user.`,
         ...state.settings.penalties.map((p, i) => `!vote ${i + 1}: ${p}`),
         it ? "Sempre sicuro e volontario." : "Always safe and voluntary.",
       ]))

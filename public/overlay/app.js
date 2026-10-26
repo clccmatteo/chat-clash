@@ -39,6 +39,7 @@ subscribe(
           ? "ROUND COMPLETE"
           : "ROUND 01",
     );
+    $("timer").parentElement.classList.toggle("voting", g.phase === "verdict" && !!g.winner);
     text(
       "phase",
       {
@@ -46,7 +47,7 @@ subscribe(
         battle: "BATTLE",
         flash: "FLASH CHALLENGE",
         rush: "RUSH ×2",
-        verdict: "VERDICT",
+        verdict: g.winner ? "VERDICT · VOTE OPEN" : "VERDICT",
         complete: "ROUND COMPLETE",
         stopped: "ROUND STOPPED",
       }[g.phase],
@@ -118,6 +119,8 @@ subscribe(
     }
     const verdict = ["verdict", "complete"].includes(g.phase);
     $("verdict-card").hidden = !verdict;
+    $("vote-countdown").hidden = g.phase !== "verdict" || !g.winner;
+    text("vote-clock", clock(g.voteRemainingMs));
     if (verdict) {
       text(
         "verdict-title",
@@ -134,7 +137,7 @@ subscribe(
               ? "No votes cast. No penalty selected."
               : "A rematch is calling."
           : g.winner
-            ? `Winning chat: !vote 1–${g.penalties.length} · ${clock(g.voteRemainingMs)} left`
+            ? `Winning chat: vote now with !vote 1–${g.penalties.length}`
             : "No penalty. Just bragging rights for both teams.",
       );
       const votes = JSON.stringify([g.penalties, g.votes, g.phase, g.winner]);

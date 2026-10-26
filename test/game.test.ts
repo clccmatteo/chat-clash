@@ -279,6 +279,22 @@ test("round end freezes scores and votes accept one vote per winning-team user o
   assert.deepEqual(Object.values(g.votes), [1]);
   assert.equal(g.penalty, settings.penalties[1]);
 });
+test("public vote countdown reaches zero at the exclusive deadline while scores stay frozen", () => {
+  const end = config.timing.roundMs;
+  let g = tick(send(started()), end);
+  const scores = { ...g.scores };
+  assert.equal(publicState(g).voteRemainingMs, config.timing.voteMs);
+  g = tick(g, end + config.timing.voteMs - 1);
+  assert.equal(publicState(g).voteRemainingMs, 1);
+  assert.equal(publicState(g).phase, "verdict");
+  g = send(g, { userId: "on-time", ts: g.now, text: "!vote 2" });
+  g = send(g, { userId: "too-late", ts: end + config.timing.voteMs, text: "!vote 1" });
+  assert.equal(publicState(g).voteRemainingMs, 0);
+  assert.equal(publicState(g).phase, "complete");
+  assert.deepEqual(g.scores, scores);
+  assert.deepEqual(Object.values(g.votes), [1]);
+  assert.equal(g.penalty, settings.penalties[1]);
+});
 test("draw has no penalty vote; no votes means no penalty; tied votes choose first listed option", () => {
   assert.equal(tick(started(), 210000).winner, null);
   assert.equal(tick(send(started()), 210000).penalty, null);

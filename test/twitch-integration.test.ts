@@ -10,7 +10,7 @@ import { MockTwitch, eventually } from "./twitch-mock.js";
 import { roundAnnouncements } from "../src/twitch/announcements.js";
 import { ChatOutbox } from "../src/twitch/outbox.js";
 import { FakeClock } from "./twitch-helpers.js";
-import { createGame, startRound, tick } from "../src/game/index.js";
+import { config, createGame, startRound, tick } from "../src/game/index.js";
 import type { Challenge } from "../src/game/types.js";
 
 async function harness(botLogin = "", nonAffiliate = false) {
@@ -404,6 +404,18 @@ test("announcements fit Twitch's limit, vote options go only to winners, and que
       .every((m) => m.team === "A"),
   );
   assert.ok(messages.some((m) => m.text.includes("!vote 8:")));
+  for (const language of ["en", "it"] as const) {
+    const state = { ...g, settings: { ...g.settings, language } };
+    const localized = roundAnnouncements(state, "rush");
+    const seconds = `${config.timing.voteMs / 1000} ${language === "en" ? "seconds" : "secondi"}`;
+    for (const team of ["A", "B"] as const)
+      assert.ok(localized.find((m) => m.team === team)?.text.includes(seconds));
+    const command = language === "en" ? "!vote NUMBER" : "!vote NUMERO";
+    assert.ok(localized.some((m) => m.team === "A" && m.text.includes(command) && m.text.includes(seconds)));
+    assert.ok(localized.every((m) => m.text.length <= 500));
+    const draw = roundAnnouncements({ ...state, winner: null }, "rush");
+    assert.ok(draw.every((m) => !m.text.includes("!vote")));
+  }
   let current = true;
   const outbox = new ChatOutbox(async (_team, text) => {
     sent.push(text);

@@ -198,3 +198,23 @@ metadata until the real adapter resolves native emotes. No runtime AI calls.
   own licenses. No creative asset or game content needed replacement.
 - Verification: all 50 tests and strict TypeScript pass on Node 22. Dependencies,
   challenge records, penalties and game configuration are unchanged.
+
+### Step 5 — Live voting clarity
+
+- Kept the existing 30-second vote window and server-owned countdown. Added a
+  large bordered `VOTE CLOSES IN` timer beside the options, a mint top timer and
+  `VERDICT · VOTE OPEN` banner. The extra timer hides after voting and for draws.
+  Names and penalty text still use textContent. No new timers or scoring values.
+- Existing chat instructions already included `30s`; made the duration explicit
+  as `30 seconds` in the first verdict announcement to both rooms and `vote NOW`
+  in the winning-room instructions, in English and Italian. Message routing,
+  chunking, OAuth, EventSub and delivery behavior are unchanged.
+- Extended mocked announcement checks for both languages, the config-derived
+  duration, first message to both teams, winner-only options and 500-character
+  chunks. Added a fake-clock regression for 30,000 → 1 → 0 ms, frozen scores,
+  a final in-window vote and rejection exactly at the closing boundary.
+- Browser-verified a full 12× simulator round in an isolated credential-free copy
+  at 1920×1080: both prominent timers displayed 00:28 with visible vote options.
+  Screenshot saved under ignored artifacts/submission/. No real chat was sent.
+- Verification: all 51 tests and strict TypeScript pass on Node 22; overlay module
+  syntax passes. data/config.json, game engine and Twitch transport are unchanged.
