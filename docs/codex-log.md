@@ -144,3 +144,17 @@ metadata until the real adapter resolves native emotes. No runtime AI calls.
   50 tests and `npm run typecheck` passes (host Node 24.21.0).
 - Created the initial local snapshot of the existing project. No deployment,
   remote or push; game rules, config and Twitch behavior are unchanged.
+
+### Step 1 — Fresh-clone check
+
+- Cloned the initial commit into a temporary directory, initially without `.env`
+  or `.local/`, and cleared Twitch configuration from the child environment.
+- On Node 22.23.4, `npm ci`, `npm test` (50/50), `npm run typecheck` and
+  `npm run sim` all passed. Install reported zero vulnerabilities.
+- Started the actual `npm start` command on an isolated loopback port, confirmed
+  both pages return HTTP 200 and ran a complete 12× round through flash, rush,
+  verdict/vote and a penalty result in 17.5 seconds (over 3,000 events).
+- No first-run code fix was needed. Added reproducible judge instructions in
+  `docs/fresh-clone.md`. Startup may create ignored local storage without OAuth.
+- Verification after this step: all 50 tests and strict TypeScript pass on Node 22.
+  Temporary logs and evidence remain outside committed source. No deployment/push.
