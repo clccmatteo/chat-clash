@@ -1,9 +1,11 @@
 import { subscribe, text, clock } from "/shared/stream.js";
 
 const $ = (id) => document.getElementById(id);
+const showcase = new URLSearchParams(location.search).has("showcase");
+document.documentElement.classList.toggle("showcase", showcase);
 function fit() {
   $("arena").style.transform =
-    `scale(${Math.min(innerWidth / 1920, innerHeight / 1080)})`;
+    `scale(${Math.min(innerWidth / (showcase ? 1120 : 1920), innerHeight / (showcase ? 900 : 1080))})`;
 }
 addEventListener("resize", fit);
 fit();
@@ -39,7 +41,10 @@ subscribe(
           ? "ROUND COMPLETE"
           : "ROUND 01",
     );
-    $("timer").parentElement.classList.toggle("voting", g.phase === "verdict" && !!g.winner);
+    $("timer").parentElement.classList.toggle(
+      "voting",
+      g.phase === "verdict" && !!g.winner,
+    );
     text(
       "phase",
       {
@@ -122,9 +127,14 @@ subscribe(
     $("vote-countdown").hidden = g.phase !== "verdict" || !g.winner;
     text("vote-clock", clock(g.voteRemainingMs));
     if (verdict) {
-      text("verdict-kicker", g.phase === "complete"
-        ? g.penalty ? "SELECTED PENALTY · VOLUNTARY" : "ROUND RESULT"
-        : "THE CHAT HAS SPOKEN");
+      text(
+        "verdict-kicker",
+        g.phase === "complete"
+          ? g.penalty
+            ? "SELECTED PENALTY · VOLUNTARY"
+            : "ROUND RESULT"
+          : "THE CHAT HAS SPOKEN",
+      );
       text(
         "verdict-title",
         g.winner
@@ -159,7 +169,7 @@ subscribe(
                   count = document.createElement("small");
                 cmd.textContent = `!vote ${i + 1}`;
                 label.textContent = p;
-              count.textContent = `${g.votes[i]} ${g.votes[i] === 1 ? "vote" : "votes"}`;
+                count.textContent = `${g.votes[i]} ${g.votes[i] === 1 ? "vote" : "votes"}`;
                 li.append(cmd, label, count);
                 return li;
               })

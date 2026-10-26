@@ -499,7 +499,7 @@ export function createClashServer(
         res.end();
         return;
       }
-      if (url.pathname === "/overlay" || url.pathname === "/control") {
+      if (["/overlay", "/control", "/showcase"].includes(url.pathname)) {
         res.writeHead(302, { Location: `${url.pathname}/` });
         res.end();
         return;

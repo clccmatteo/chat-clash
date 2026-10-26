@@ -313,3 +313,20 @@ metadata until the real adapter resolves native emotes. No runtime AI calls.
 - Verification: 53 tests pass; strict TypeScript and diff whitespace checks pass.
   CLI output retains the exact baseline. No game/config/Twitch source edits, no
   external runtime dependency, and no submission/video-script changes.
+
+### Step 2 — Showcase page and recording controls
+
+- Added /showcase/ with coral/mint generic dark chat columns, original CSS badges
+  and spark art, Unicode combo waves, an always-visible simulated-viewer label,
+  native fullscreen and 1x/4x/12x demo launch controls. All feed values use
+  textContent; no external assets, fonts, frontend build or new runtime dependency.
+- Embedded the existing overlay renderer with a scoped center-column layout;
+  regular OBS styling and all game/phase/scoring logic are unchanged. Controls
+  hide during play and preserve the final verdict, with a separate replay button.
+- Display queues are bounded and drain at six rows per second per side, favoring
+  special events. Live mode clears the columns to a private-chat placeholder.
+  Demo launch uses only the safe catalog and server-provided demo approvals;
+  saved live approvals remain false.
+- Verification: all 54 tests, strict TypeScript, frontend syntax and diff checks
+  pass. Added queue prioritization/dedup/reset checks, showcase HTTP/redirect
+  coverage, and simulator-to-live feed isolation with mocked Twitch I/O.

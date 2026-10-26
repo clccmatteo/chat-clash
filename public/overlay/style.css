@@ -131,7 +131,10 @@ body {
   letter-spacing: 1px;
 }
 .vote-countdown strong {
-  font: 48px/1 Impact, "Arial Narrow", sans-serif;
+  font:
+    48px/1 Impact,
+    "Arial Narrow",
+    sans-serif;
   font-variant-numeric: tabular-nums;
 }
 .meter {
@@ -460,4 +463,128 @@ body {
   font-size: 28px;
   font-weight: 700;
   color: var(--mint);
+}
+
+/* The same overlay renderer in a taller showcase center column. OBS stays 1920x1080. */
+.showcase #arena {
+  width: 1120px;
+  height: 900px;
+}
+.showcase .scoreboard {
+  top: 16px;
+  left: 8px;
+  right: 8px;
+  padding: 24px 22px;
+}
+.showcase .score-head {
+  grid-template-columns: minmax(0, 1fr) 180px minmax(0, 1fr);
+  gap: 16px;
+}
+.showcase .team {
+  gap: 12px;
+}
+.showcase .team h1 {
+  font-size: 30px;
+}
+.showcase .team strong {
+  font-size: 65px;
+}
+.showcase .team .eyebrow {
+  font-size: 15px;
+}
+.showcase .team .eyebrow span {
+  display: none;
+}
+.showcase #timer {
+  font-size: 82px;
+}
+.showcase .phase-wrap {
+  top: 230px;
+}
+.showcase .phase {
+  font-size: 30px;
+}
+.showcase .phase-wrap p {
+  font-size: 21px;
+}
+.showcase .challenge-card {
+  top: 340px;
+  left: 40px;
+  width: 1040px;
+  padding: 28px;
+}
+.showcase .challenge-card h2 {
+  font-size: 40px;
+}
+.showcase .challenge-card p {
+  font-size: 22px;
+}
+.showcase .verdict-card {
+  top: 235px;
+  left: 40px;
+  width: 1040px;
+  padding: 20px 24px;
+}
+.showcase:has(#verdict-card:not([hidden])) .phase-wrap {
+  display: none;
+}
+.showcase .verdict-card h2 {
+  font-size: 48px;
+  margin: 10px 0;
+}
+.showcase .verdict-card p {
+  font-size: 22px;
+  margin: 10px 0;
+}
+.showcase .vote-countdown {
+  margin: 10px 0;
+  padding: 6px 16px;
+}
+.showcase .vote-countdown strong {
+  font-size: 44px;
+}
+.showcase #vote-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: 12px 0;
+}
+.showcase #vote-options li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  padding: 12px;
+  font-size: 18px;
+}
+.showcase #vote-options li small {
+  margin-left: 0;
+}
+.showcase #vote-options.many-options {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.showcase .mvp {
+  bottom: 16px;
+  width: 504px;
+  padding: 18px;
+}
+.showcase .mvp-a {
+  left: 8px;
+}
+.showcase .mvp-b {
+  right: 8px;
+}
+.showcase .mvp-heading {
+  font-size: 15px;
+}
+.showcase .mvp ol {
+  margin-top: 14px;
+  gap: 8px;
+}
+.showcase .mvp li {
+  font-size: 22px;
+  height: 26px;
+}
+.showcase .brand {
+  display: none;
 }

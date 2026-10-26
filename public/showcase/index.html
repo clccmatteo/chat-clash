@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chat Clash · Showcase</title>
+    <link rel="icon" href="/brand/favicon.ico" />
+    <link rel="stylesheet" href="/showcase/style.css" />
+    <script type="module" src="/showcase/app.js"></script>
+  </head>
+  <body>
+    <main id="showcase" aria-label="Chat Clash simulated community showcase">
+      <header class="masthead">
+        <div class="wordmark">
+          <img src="/brand/logo.png" width="64" height="64" alt="" /><strong
+            >CHAT CLASH</strong
+          ><span>THE COMMUNITY ARENA</span>
+        </div>
+        <div class="demo-label">SIMULATED VIEWERS · DEMO</div>
+      </header>
+      <div class="rooms">
+        <section class="chat-room team-a" aria-labelledby="team-a-name">
+          <header>
+            <div class="room-kicker">
+              <span class="room-dot"></span> TEAM A
+              <span class="room-status">SIMULATED CHAT</span>
+            </div>
+            <h1 id="team-a-name">Coral Crew</h1>
+            <p>A little louder. A little closer.</p>
+          </header>
+          <div class="chat-window">
+            <p class="placeholder" id="placeholder-a">
+              Start a demo to rally this chat.
+            </p>
+            <ol
+              id="chat-a"
+              aria-label="Team A synthetic chat"
+              aria-live="off"
+            ></ol>
+          </div>
+          <footer>✦ <span id="room-a-note">Every voice counts.</span></footer>
+        </section>
+        <section class="arena-center" aria-label="Shared scoreboard">
+          <div class="arena-backdrop" aria-hidden="true">
+            <span>EVERY VOICE<br />COUNTS.</span><b>✦</b>
+          </div>
+          <iframe
+            src="/overlay/?showcase=1"
+            title="Existing Chat Clash scoreboard"
+            id="scoreboard"
+          ></iframe>
+          <section
+            id="launch-panel"
+            class="launch-panel"
+            aria-label="Showcase recording controls"
+          >
+            <span class="launch-kicker">YOUR FRONT-ROW SEAT</span>
+            <h2>TWO CHATS.<br />ONE CLASH.</h2>
+            <p>
+              Original synthetic viewers. The real game engine.<br />Pick a
+              speed and let the communities take over.
+            </p>
+            <div class="demo-speeds">
+              <button type="button" data-speed="1">Start demo 1x</button
+              ><button type="button" data-speed="4" class="primary">
+                Start demo 4x <small>~53 seconds</small></button
+              ><button type="button" data-speed="12">Start demo 12x</button>
+            </div>
+            <div class="launch-foot">
+              <span>Safe penalties · Demo approvals · No Twitch posts</span
+              ><button type="button" id="full-screen">Full screen ↗</button>
+            </div>
+          </section>
+        </section>
+        <section class="chat-room team-b" aria-labelledby="team-b-name">
+          <header>
+            <div class="room-kicker">
+              <span class="room-dot"></span> TEAM B
+              <span class="room-status">SIMULATED CHAT</span>
+            </div>
+            <h1 id="team-b-name">Mint Mob</h1>
+            <p>The comeback starts in the chat.</p>
+          </header>
+          <div class="chat-window">
+            <p class="placeholder" id="placeholder-b">
+              Start a demo to rally this chat.
+            </p>
+            <ol
+              id="chat-b"
+              aria-label="Team B synthetic chat"
+              aria-live="off"
+            ></ol>
+          </div>
+          <footer>✦ <span id="room-b-note">Every voice counts.</span></footer>
+        </section>
+      </div>
+      <footer class="broadcast-footer">
+        <span id="connection" role="status">Connecting to the arena…</span
+        ><span>PARTICIPATION DRIVES THE SCORE. PENALTIES ARE VOLUNTARY.</span
+        ><button id="new-demo" type="button" hidden>New demo ↗</button>
+      </footer>
+      <p id="notice" role="status" hidden></p>
+    </main>
+  </body>
+</html>

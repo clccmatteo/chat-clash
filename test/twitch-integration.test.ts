@@ -288,6 +288,21 @@ test("two broadcasters authorize once; live EventSub scoring, dedup, reward IDs,
       !JSON.stringify(h.app.snapshot().demoFeed).includes("PRIVATE_LIVE_NAME"),
     );
     assert.equal(h.mock.sent.length, sent);
+    assert.ok(h.app.snapshot().demoFeed.A.length > 0);
+    await h.post("/api/control", { action: "reset" });
+    assert.deepEqual(h.app.snapshot().demoFeed, { A: [], B: [] });
+    await h.post("/api/control", { action: "start", settings });
+    h.mock.emit(
+      "100",
+      CHAT,
+      chatEvent({
+        message_id: "private-after-demo",
+        message: { text: raw, fragments: [] },
+      }),
+    );
+    assert.equal(h.app.snapshot().mode, "live");
+    assert.deepEqual(h.app.snapshot().demoFeed, { A: [], B: [] });
+    assert.ok(!JSON.stringify(h.app.snapshot()).includes(raw));
   } finally {
     await h.cleanup();
   }

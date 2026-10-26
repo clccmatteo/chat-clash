@@ -22,6 +22,10 @@ test("HTTP and WebSocket deliver a full simulated round, vote, reset and safe sn
     for (const path of [
       "/control/",
       "/overlay/",
+      "/showcase/",
+      "/showcase/app.js",
+      "/showcase/feed.js",
+      "/showcase/style.css",
       "/shared/stream.js",
       "/brand/logo.png",
       "/brand/favicon.ico",
@@ -31,6 +35,9 @@ test("HTTP and WebSocket deliver a full simulated round, vote, reset and safe sn
       assert.ok((await response.arrayBuffer()).byteLength > 0);
     }
     assert.equal((await fetch(base + "/data/challenges.json")).status, 404);
+    const redirect = await fetch(base + "/showcase", { redirect: "manual" });
+    assert.equal(redirect.status, 302);
+    assert.equal(redirect.headers.get("location"), "/showcase/");
     const post = (data: unknown, origin = base) =>
       fetch(`${base}/api/control`, {
         method: "POST",
