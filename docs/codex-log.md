@@ -158,3 +158,15 @@ metadata until the real adapter resolves native emotes. No runtime AI calls.
   `docs/fresh-clone.md`. Startup may create ignored local storage without OAuth.
 - Verification after this step: all 50 tests and strict TypeScript pass on Node 22.
   Temporary logs and evidence remain outside committed source. No deployment/push.
+
+### Step 2 — README for judges
+
+- Reordered the README around a one-paragraph pitch, credential-free 60-second
+  quick start (`npm ci`, `npm start`, 12× simulator, OBS), then real-channel setup.
+  Removed the machine-specific checkout path and internal milestone/roadmap copy.
+- Added concrete Codex examples from this log and honest limitations: local-only
+  controls without auth, one in-memory match, and features verified by mocks and
+  simulation rather than a live multi-user test. Preserved the narrower real
+  two-account evidence and the missed voting deadline.
+- Verification: all 50 tests and strict TypeScript pass on Node 22. Documentation
+  only; no scoring, timing, architecture or Twitch integration changes.

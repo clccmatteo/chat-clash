@@ -2,52 +2,50 @@
 
 # Chat Clash
 
-**The most active community wins.** A live, three-minute battle between two Twitch
-communities. Messages, new participants, emote combos and flash challenges push a
-shared scoreboard. No AI models or paid AI services are used at runtime. The real
-Twitch connection uses a free public Twitch developer application and OAuth grants.
+**The most active community wins.** Chat Clash turns two Twitch communities into
+teams in a three-minute live battle. Messages, new participants, emote combos and
+a flash challenge move a shared scoreboard, then RUSH ×2 opens the door to a
+comeback. The winning chat votes on a safe, voluntary penalty approved by both
+streamers. A transparent OBS overlay makes the action easy to follow. Built with
+Codex for the Codex × TwitchCon Hackathon; no AI calls or paid AI services run
+during a match.
 
-Built for the **Codex × TwitchCon Hackathon — November 2, 2026**.
-Milestone 2 adds two-channel Twitch EventSub over WebSocket, public-client Device
-Code OAuth, automatic token refresh, event deduplication, reward mapping and chat
-announcements. The complete local simulator remains available without credentials.
+## Try it without Twitch — 60-second quick start
 
-## Run locally
-
-Prerequisite: **Node.js 22** and npm. `.nvmrc` pins the major version for nvm users.
+Use **Node.js 22** and npm in your checkout. No credentials or `.env` are needed.
 
 ```sh
-cd "/Users/matteocolucci/Projects2026/Codex x TwitchCon Hackathon"
-nvm use                  # optional, if you use nvm; install with nvm install first
-npm install
-npm run dev
+npm ci
+npm start
 ```
 
-1. Open **http://127.0.0.1:3000/control/**.
-2. Click **Start simulator**. The default runs a full **180-second round plus a
-   30-second penalty vote**. Select **4×** or **12×** before starting for a faster
-   demo; these change the virtual clock, not the scoring rules.
-3. Watch the embedded preview, scores, MVPs and event log update live.
-4. Use **Stop** to abort a round, **Reset** to clear it, or start a fresh round
-   after it ends. Refreshing a page reconnects to the same in-memory match.
+1. Open [the control panel](http://127.0.0.1:3000/control/).
+2. Choose **12×** under simulator speed, then click **Start simulator**. Watch a
+   complete round, including voting, in about **17.5 seconds**.
+3. In OBS, add a **Browser Source** with URL
+   **http://127.0.0.1:3000/overlay/**, width **1920**, height **1080**. The overlay
+   has a transparent background; the control preview's checkerboard is just a
+   transparency guide. You can also [open the overlay](http://127.0.0.1:3000/overlay/)
+   directly without OBS.
 
-**OBS:** Add a **Browser Source**, URL **http://127.0.0.1:3000/overlay/**, width
-**1920**, height **1080**. The background is transparent. The preview uses a
-checkerboard to demonstrate transparency; that checkerboard is not in the overlay.
-The overlay reconnects automatically and honors `prefers-reduced-motion`.
+Simulator speed advances the virtual clock; scoring rules stay the same. Use
+**Stop** to abort, **Reset** to clear, or start another round after completion.
+Refreshing reconnects to the same in-memory match. The simulator sends no Twitch
+messages and uses demo penalty approvals. See [fresh-clone verification](docs/fresh-clone.md).
 
-For a new checkout, copy `.env.example` to `.env` if one does not already exist.
-Set `TWITCH_CLIENT_ID`, `TWITCH_TEAM_A_LOGIN`, and `TWITCH_TEAM_B_LOGIN`. A blank
-`TWITCH_BOT_LOGIN` follows Team A. This is a **PUBLIC client**: no client secret or
-redirect URI. Only loopback hosts are supported. `.env` and `.local/` are ignored.
-Restarts clear the match and restore startup logins from `.env`; tokens and reward
-mappings persist in the owner-only `.local/twitch-tokens.json` file.
+## Connect real Twitch channels
 
-**Real-channel setup and a complete offline test with two accounts:**
-[docs/twitch-test.md](docs/twitch-test.md). Authorize each distinct account using the
-activation code and Twitch link shown in the controls, wait for both chats to
-connect, approve penalties, then use **Start round**. No broadcast is required.
-Non-Affiliate channels retain chat/raids and display Bits/points as unavailable.
+Follow [the two-account setup and test guide](docs/twitch-test.md). Copy
+`.env.example` to `.env` only if you do not already have one, fill in your public
+Client ID and channel logins, then authorize the accounts in the local controls.
+Wait for **BOTH CHATS READY**, approve the safe penalties as both streamers, and
+click **Start round**. Real rounds always run at normal speed. Two offline chat
+rooms work; a live broadcast is optional for testing.
+
+The app uses public-client **Device Code OAuth**: no client secret or redirect
+URI. Non-Affiliate channels support chat and raids; Bits and channel points are
+optional. `.env` and `.local/` stay ignored. Tokens and reward mappings persist
+locally with owner-only permissions; matches clear on restart.
 
 ## Scripts and checks
 
@@ -118,7 +116,7 @@ English and Italian prompt: 40 trivia, 30 anagrams, 30 quick math, 30 type-races
 
 - **Trivia, anagram, math:** most distinct correct users within the 30-second
   window wins. A tie goes to the team whose correct answer arrived first.
-- **Type-race:** the first correct answer wins, as confirmed for this milestone.
+- **Type-race:** the first correct answer wins.
 - **Emote target:** the first team to reach 10 distinct users sending the target
   emote inside a rolling 10-second window wins. Fewer than 10 does not qualify.
 - When timestamps are identical, normalized-event processing order determines the
@@ -194,11 +192,29 @@ project; PNG and multiresolution ICO favicons are included. The mark shows two
 colliding speech bubbles with a spark, without third-party logos or characters.
 The generation prompt and export provenance are in `public/brand/README.md`.
 
-## Next milestone
+## How Codex built this
 
-- Add authentication and deployment hardening before exposing controls publicly.
-- Exercise full matches with the real broadcaster accounts after their owners finish
-  device authorization; use the offline test guide above.
+Codex scaffolded the Node 22 / strict TypeScript app, implemented the pure reducer
+and seeded simulator, and built the local server, overlay and controls. It added
+160 original bilingual challenges, mocked Device Code OAuth and EventSub tests,
+and privacy checks for public snapshots. Tests caught a misleading privacy fixture;
+explicit timestamp regressions fixed same-millisecond challenge ties. Browser
+review caught a preview scaling bug and an opaque overlay fallback. Human testing
+then verified two real chat connections, scoring, rush, a flash result and voting.
+The [build log](docs/codex-log.md) records the work, verification and remaining gaps.
+
+## Known limitations
+
+- **Local-only, with no authentication.** Run on loopback; do not expose or deploy
+  the controls publicly.
+- **One match per process**, held in memory. Restarting clears match state.
+- Combos, emote targets, Bits, channel points and raids are verified only by mocked
+  tests and the simulator, **not by a live multi-user test**. Two-account manual
+  tests covered basic chat scoring, cooldowns, rush, a type-race result and a valid
+  penalty vote. A later round's votes arrived after the deadline.
+- A lost chat connection stops a live round; missed events are not replayed.
+- Penalties are display-only and voluntary. Both streamers must approve the list
+  before a real round; the app never performs a penalty automatically.
 
 ## License
 
