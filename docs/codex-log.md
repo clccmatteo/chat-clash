@@ -218,3 +218,23 @@ metadata until the real adapter resolves native emotes. No runtime AI calls.
   Screenshot saved under ignored artifacts/submission/. No real chat was sent.
 - Verification: all 51 tests and strict TypeScript pass on Node 22; overlay module
   syntax passes. data/config.json, game engine and Twitch transport are unchanged.
+
+### Step 6 — Video readiness
+
+- Used the better-ui skill for a scoped visual pass, retaining the existing design.
+  Replayed full 12× rounds in the isolated simulator: 1920×1080 overlay and
+  1280×720 laptop controls (measured DOM viewports).
+- Inspected type-race and longer emote-target flash prompts, coral RUSH ×2,
+  verdict/vote, the default three options and the maximum eight-option list,
+  plus final penalty and control-panel status through every phase.
+- Found the eight-option vote card overlapped the center logo after the new timer.
+  Tightened only that card's spacing, made the vote banner mint, enlarged final
+  penalty copy and added an explicit voluntary-result label. Increased the control
+  round hint to 12px and named FLASH / RUSH ×2 in its status; removed milestone
+  wording from the footer. No layout redesign or external assets/dependencies.
+- Replayed the final UI: all eight options clear the logo/MVP panels, the flash
+  prompt fits, and the result is distinct from voting. No browser errors/warnings.
+  Saved local screenshots and the scoped report in docs/video-readiness.md.
+- Verification: all 51 tests and strict TypeScript pass on Node 22; frontend
+  module syntax passes. Actual OBS capture/compositing and compression remain
+  manual recording checks. No real chat, deployment or push.

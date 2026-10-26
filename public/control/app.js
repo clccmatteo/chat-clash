@@ -190,8 +190,8 @@ function render(data) {
     {
       idle: "Ready when you are.",
       battle: "The battle is on.",
-      flash: "Think fast. Chat faster.",
-      rush: "Final rush. Double points.",
+      flash: "FLASH · Think fast. Chat faster.",
+      rush: "RUSH ×2 · Double points.",
       verdict: g.winner
         ? `${g.teams[g.winner].name} wins!`
         : "What a battle. It’s a draw.",

@@ -201,6 +201,9 @@ body {
 .phase.flash {
   background: var(--mint);
 }
+.phase.verdict {
+  background: var(--mint);
+}
 .challenge-card,
 .verdict-card {
   position: absolute;
@@ -431,8 +434,30 @@ body {
 .verdict-card .many-options li {
   font-size: 16px;
   min-width: 0;
-  padding: 8px 10px;
+  padding: 6px 8px;
+  gap: 8px;
+  line-height: 1.25;
 }
 .verdict-card .many-options li span {
   overflow-wrap: anywhere;
+}
+.verdict-card:has(.many-options) {
+  padding: 16px 24px;
+}
+.verdict-card:has(.many-options) h2 {
+  font-size: 48px;
+  margin: 8px 0;
+}
+.verdict-card:has(.many-options) .vote-countdown {
+  margin: 10px 0;
+  padding: 6px 12px;
+}
+.verdict-card ol.many-options {
+  margin: 10px 0;
+  gap: 6px;
+}
+.verdict-card:has(#vote-countdown[hidden]) #verdict-detail {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--mint);
 }

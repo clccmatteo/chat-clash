@@ -122,6 +122,9 @@ subscribe(
     $("vote-countdown").hidden = g.phase !== "verdict" || !g.winner;
     text("vote-clock", clock(g.voteRemainingMs));
     if (verdict) {
+      text("verdict-kicker", g.phase === "complete"
+        ? g.penalty ? "SELECTED PENALTY · VOLUNTARY" : "ROUND RESULT"
+        : "THE CHAT HAS SPOKEN");
       text(
         "verdict-title",
         g.winner
