@@ -330,3 +330,31 @@ metadata until the real adapter resolves native emotes. No runtime AI calls.
 - Verification: all 54 tests, strict TypeScript, frontend syntax and diff checks
   pass. Added queue prioritization/dedup/reset checks, showcase HTTP/redirect
   coverage, and simulator-to-live feed isolation with mocked Twitch I/O.
+
+### Step 3 — Recording review, readability and quick start
+
+- Visual review caught combo traffic starving ordinary chat. Reserved queue space
+  and every third display slot for readable messages; added a sustained-wave
+  regression. Kept rare events prioritized and froze display scheduling at the
+  final verdict. Fixed the showcase iframe canvas fallback and timer spacing.
+- Updated README's credential-free quick start: npm ci → npm start → /showcase/
+  → Start demo 4x, plus fullscreen, replay, speeds and privacy behavior.
+- Ran a complete 4x browser round with the effective viewport measured at
+  1920×1080 in every capture. Battle/special events at 2s, raid at 12s, masked
+  flash at 24s, RUSH ×2 at 38.5s, verdict/vote countdown at 46.5s and completed
+  result at 53.4s were visible. Launch controls stayed hidden throughout.
+- Checked 1440×900: the 1440×810 canvas is centered with 45px letterboxing and
+  no overflow. No browser errors or warnings. Native fullscreen was requested,
+  but this embedded browser did not confirm the transition; verify Full screen
+  in the actual recording browser at 100% zoom before recording.
+- Verified live-mode placeholders and an updating center score in an isolated,
+  mocked-Twitch preview: zero feed rows and no private message text in the DOM.
+  Closed that preview and removed its temporary mock-token directory.
+- Evidence stays ignored under artifacts/: showcase-1920-{battle,raid,flash,rush,
+  vote,complete}.jpg; showcase-1440x900.jpg; showcase-live-private.jpg; and
+  showcase-browser-check.json. Captures use native browser pixel density.
+- Verification: all 55 tests, strict TypeScript, frontend syntax and whitespace
+  checks pass, with additional Node 22 verification. The golden seed-42 CLI
+  outcome remains exactly unchanged. Protected game/config/Twitch sources and
+  docs/submission.md / docs/video-script.md are untouched. No runtime dependency
+  was added. Publish only the three feature steps after the final checks pass.

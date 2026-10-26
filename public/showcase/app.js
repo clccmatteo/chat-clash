@@ -87,7 +87,7 @@ function renderRow(row) {
 // Six readable rows per real second per room at every simulation speed. Rare
 // events go first; queues and DOM stay bounded even at 12x or after reconnects.
 setInterval(() => {
-  if (mode !== "simulator" || !connected) return;
+  if (mode !== "simulator" || !connected || !active(latest?.game.phase)) return;
   for (const team of ["A", "B"]) {
     const row = queues[team].take();
     if (row) renderRow(row);

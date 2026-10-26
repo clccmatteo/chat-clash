@@ -10,7 +10,8 @@ const priority = {
 };
 export function createFeedQueue(limit = 28) {
   let pending = [],
-    seen = 0;
+    seen = 0,
+    turn = 0;
   return {
     add(rows) {
       for (const row of rows) {
@@ -22,12 +23,27 @@ export function createFeedQueue(limit = 28) {
         (a, b) =>
           (priority[b.kind] ?? 0) - (priority[a.kind] ?? 0) || a.id - b.id,
       );
-      pending = pending.slice(0, limit);
+      // Preserve ordinary chatter through continuous combo waves. Fill spare
+      // slots with chat when fewer special rows are available.
+      const chatter = pending.filter((row) => row.kind === "chat");
+      const reserve = Math.min(
+        chatter.length,
+        Math.max(1, Math.floor(limit / 4)),
+      );
+      const special = pending
+        .filter((row) => row.kind !== "chat")
+        .slice(0, limit - reserve);
+      pending = [...special, ...chatter.slice(-(limit - special.length))];
     },
-    take: () => pending.shift(),
+    take() {
+      const chat =
+        turn++ % 3 === 2 ? pending.findIndex((row) => row.kind === "chat") : -1;
+      return pending.splice(chat >= 0 ? chat : 0, 1)[0];
+    },
     clear() {
       pending = [];
       seen = 0;
+      turn = 0;
     },
     size: () => pending.length,
   };

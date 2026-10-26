@@ -29,17 +29,32 @@ test("showcase display queue bounds bursts, favors rare events, deduplicates sna
     { id: 44, kind: "combo" },
   ]);
   assert.equal(queue.size(), 5);
-  assert.deepEqual(
-    [
-      queue.take().kind,
-      queue.take().kind,
-      queue.take().kind,
-      queue.take().kind,
-    ],
-    ["cheer", "answer", "vote", "combo"],
-  );
+  assert.deepEqual(Array.from({ length: 5 }, () => queue.take().kind).sort(), [
+    "answer",
+    "chat",
+    "cheer",
+    "combo",
+    "vote",
+  ]);
   queue.clear();
   assert.equal(queue.size(), 0);
   queue.add([{ id: 1, kind: "chat" }]);
   assert.equal(queue.take().id, 1);
+});
+
+test("continuous combo waves cannot starve ordinary readable chat", () => {
+  const queue = createFeedQueue();
+  let id = 0,
+    chats = 0;
+  for (let tick = 0; tick < 30; tick++) {
+    queue.add(
+      Array.from({ length: 10 }, (_, index) => ({
+        id: ++id,
+        kind: index === 0 ? "chat" : "combo",
+      })),
+    );
+    if (queue.take().kind === "chat") chats++;
+    assert.ok(queue.size() <= 28);
+  }
+  assert.equal(chats, 10);
 });

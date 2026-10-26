@@ -19,9 +19,15 @@ npm ci
 npm start
 ```
 
-1. Open [the control panel](http://127.0.0.1:3000/control/).
-2. Choose **12×** under simulator speed, then click **Start simulator**. Watch a
-   complete round, including voting, in about **17.5 seconds**.
+1. Open [Showcase](http://127.0.0.1:3000/showcase/) and click **Start demo 4x**.
+   Watch a complete round, including voting, in about **53 seconds**, with two
+   synthetic chat columns and the existing scoreboard in the center. No Twitch
+   setup is needed. The **SIMULATED VIEWERS · DEMO** label always stays visible.
+2. For recording, use **Full screen** before starting. The launch panel hides
+   during the round and the final verdict stays visible. The page fits 1920×1080
+   and scales to 1440×900. **1x** takes 3m30s; **12x** takes about 17.5 seconds.
+   **New demo** opens the controls after completion. The separate
+   [control panel](http://127.0.0.1:3000/control/) still offers the original simulator.
 3. In OBS, add a **Browser Source** with URL
    **http://127.0.0.1:3000/overlay/**, width **1920**, height **1080**. The overlay
    has a transparent background; the control preview's checkerboard is just a
@@ -32,6 +38,15 @@ Simulator speed advances the virtual clock; scoring rules stay the same. Use
 **Stop** to abort, **Reset** to clear, or start another round after completion.
 Refreshing reconnects to the same in-memory match. The simulator sends no Twitch
 messages and uses demo penalty approvals. See [fresh-clone verification](docs/fresh-clone.md).
+
+Showcase uses original synthetic usernames/messages, Unicode emoji and CSS art.
+Only simulator-generated display rows are broadcast, bounded to 40 per team;
+correct flash replies are masked. Display runs at six rows per second per chat,
+prioritizing special events while reserving room for ordinary messages. A separate
+cosmetic RNG preserves the seed-42 terminal outcome exactly. Real Twitch chat
+stays private: in live mode the columns show **Live chat stays private — scores
+only**, while the center scoreboard continues updating. All controls stay local
+and use the same origin checks as the control panel.
 
 ## Connect real Twitch channels
 
@@ -163,6 +178,7 @@ src/
 public/
   overlay/             # transparent 1920×1080 OBS scoreboard
   control/             # responsive streamer control panel and live preview
+  showcase/            # full-screen recording view with simulator-only chat
   shared/              # reconnecting WebSocket client
   brand/               # generated 1024px transparent mark and favicon exports
 test/                  # scoring, fake-clock game tests, data and server integration

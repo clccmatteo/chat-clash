@@ -466,6 +466,10 @@ body {
 }
 
 /* The same overlay renderer in a taller showcase center column. OBS stays 1920x1080. */
+.showcase body {
+  background: #0b1214;
+  color-scheme: dark;
+}
 .showcase #arena {
   width: 1120px;
   height: 900px;
@@ -477,7 +481,7 @@ body {
   padding: 24px 22px;
 }
 .showcase .score-head {
-  grid-template-columns: minmax(0, 1fr) 180px minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) 230px minmax(0, 1fr);
   gap: 16px;
 }
 .showcase .team {
