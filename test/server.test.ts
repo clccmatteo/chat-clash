@@ -173,3 +173,61 @@ test("WebSocket rejects cross-origin clients", async () => {
     await app.close();
   }
 });
+
+test("simulator pause freezes every phase and display feed, resumes without catch-up, and resets on stop/reset", async () => {
+  const app = createClashServer({ autoTick: false, twitch: false });
+  app.server.listen(0, "127.0.0.1");
+  await once(app.server, "listening");
+  const address = app.server.address();
+  assert.ok(address && typeof address === "object");
+  const base = `http://127.0.0.1:${address.port}`;
+  const post = (action: string, extra = {}) =>
+    fetch(`${base}/api/control`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Origin: base },
+      body: JSON.stringify({ action, ...extra }),
+    });
+  try {
+    assert.equal((await post("pause-simulator")).status, 409);
+    assert.equal((await post("resume-simulator")).status, 409);
+    const settings = app.snapshot().settings;
+    await post("start-simulator", { settings, speed: 4 });
+    for (const phase of ["battle", "flash", "rush", "verdict"]) {
+      const target = {
+        battle: 20000,
+        flash: 95000,
+        rush: 155000,
+        verdict: 185000,
+      }[phase]!;
+      app.advance((target - app.snapshot().game.elapsedMs) / 4);
+      assert.equal(app.snapshot().game.phase, phase);
+      assert.equal((await post("pause-simulator")).status, 200);
+      const paused = app.snapshot();
+      assert.equal(paused.simulatorPaused, true);
+      app.advance(90000);
+      assert.deepEqual(app.snapshot().game, paused.game);
+      assert.deepEqual(app.snapshot().demoFeed, paused.demoFeed);
+      // Duplicate commands are idempotent, rather than toggling unexpectedly.
+      await post("pause-simulator");
+      assert.equal(app.snapshot().simulatorPaused, true);
+      assert.equal((await post("resume-simulator")).status, 200);
+      assert.equal(app.snapshot().simulatorPaused, false);
+      app.advance(250);
+      assert.equal(app.snapshot().game.elapsedMs, target + 1000);
+    }
+    app.advance(10000);
+    assert.equal(app.snapshot().game.phase, "complete");
+    assert.equal((await post("pause-simulator")).status, 409);
+    await post("start-simulator", { settings });
+    await post("pause-simulator");
+    await post("stop");
+    assert.equal(app.snapshot().simulatorPaused, false);
+    await post("start-simulator", { settings });
+    await post("pause-simulator");
+    await post("reset");
+    assert.equal(app.snapshot().simulatorPaused, false);
+    assert.equal(app.snapshot().game.phase, "idle");
+  } finally {
+    await app.close();
+  }
+});

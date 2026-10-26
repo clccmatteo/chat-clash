@@ -1,5 +1,6 @@
 import { subscribe, text } from "/shared/stream.js";
 import { createFeedQueue } from "/showcase/feed.js";
+import { isPauseShortcut } from "/showcase/keyboard.js";
 
 const $ = (id) => document.getElementById(id);
 const queues = { A: createFeedQueue(), B: createFeedQueue() };
@@ -87,7 +88,13 @@ function renderRow(row) {
 // Six readable rows per real second per room at every simulation speed. Rare
 // events go first; queues and DOM stay bounded even at 12x or after reconnects.
 setInterval(() => {
-  if (mode !== "simulator" || !connected || !active(latest?.game.phase)) return;
+  if (
+    mode !== "simulator" ||
+    !connected ||
+    latest?.simulatorPaused ||
+    !active(latest?.game.phase)
+  )
+    return;
   for (const team of ["A", "B"]) {
     const row = queues[team].take();
     if (row) renderRow(row);
@@ -100,6 +107,13 @@ subscribe(
     if (round !== state.demoRound || mode !== state.mode) clearChats();
     round = state.demoRound;
     mode = state.mode;
+    $("showcase").classList.toggle("paused", state.simulatorPaused);
+    text(
+      "playback-status",
+      state.simulatorPaused
+        ? "PAUSED · SPACE TO RESUME"
+        : "SPACE · PAUSE / RESUME DEMO",
+    );
     const running = active(state.game.phase);
     if (running) hasRun = true;
     $("launch-panel").hidden = running || (hasRun && mode === "simulator");
@@ -190,3 +204,41 @@ $("full-screen").addEventListener("click", async () => {
 $("new-demo").addEventListener("click", () => {
   $("launch-panel").hidden = false;
 });
+
+async function togglePause(event) {
+  if (
+    !isPauseShortcut(event) ||
+    !connected ||
+    mode !== "simulator" ||
+    !active(latest?.game.phase)
+  )
+    return;
+  event.preventDefault();
+  if (busy) return;
+  busy = true;
+  updateControls();
+  try {
+    const response = await fetch("/api/control", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        action: latest.simulatorPaused ? "resume-simulator" : "pause-simulator",
+      }),
+    });
+    const result = await response.json();
+    if (!response.ok)
+      throw new Error(result.error || "Could not change demo playback.");
+    notice("");
+  } catch (error) {
+    notice(error.message || "Cannot reach the arena.");
+  } finally {
+    busy = false;
+    updateControls();
+  }
+}
+addEventListener("keydown", togglePause);
+// The embedded scoreboard has its own document and keyboard focus.
+const bindScoreboardKeys = () =>
+  $("scoreboard").contentDocument?.addEventListener("keydown", togglePause);
+$("scoreboard").addEventListener("load", bindScoreboardKeys);
+bindScoreboardKeys();

@@ -110,6 +110,15 @@ test("two broadcasters authorize once; live EventSub scoring, dedup, reward IDs,
     );
     await drain();
     assert.equal(h.app.snapshot().game.eventCount, 0); // The bot's echoed start messages cannot score.
+    assert.equal(
+      (await h.post("/api/control", { action: "pause-simulator" })).status,
+      409,
+    );
+    assert.equal(
+      (await h.post("/api/control", { action: "resume-simulator" })).status,
+      409,
+    );
+    assert.equal(h.app.snapshot().simulatorPaused, false);
     const raw = "PRIVATE CHAT MUST NOT BE BROADCAST";
     h.mock.emit(
       "100",

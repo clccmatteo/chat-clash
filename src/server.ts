@@ -156,6 +156,7 @@ export function createClashServer(
     speed = 1,
     simulator: ReturnType<typeof createSimulator> | null = null;
   let usedChallenges: string[] = [];
+  let simulatorPaused = false;
   let displayFeed = emptyDisplayFeed();
   let mode: "idle" | "live" | "simulator" = "idle",
     roundId = 0,
@@ -179,6 +180,7 @@ export function createClashServer(
     settings,
     logs,
     simulator: !!simulator,
+    simulatorPaused,
     speed,
     safePenalties,
     mode,
@@ -253,6 +255,10 @@ export function createClashServer(
       );
   };
   const advance = (realDeltaMs: number, push = true) => {
+    if (simulatorPaused) {
+      if (push) broadcast();
+      return;
+    }
     let delta = Math.max(0, realDeltaMs * speed);
     while (delta > 0) {
       const step = Math.min(250, delta);
@@ -311,7 +317,17 @@ export function createClashServer(
   );
   const command = async (data: Record<string, unknown>) => {
     const action = data.action;
+    if (action === "pause-simulator" || action === "resume-simulator") {
+      if (mode !== "simulator" || !simulator || !active(state.phase))
+        throw new RequestError(
+          "Only a running simulator can be paused or resumed",
+          409,
+        );
+      simulatorPaused = action === "pause-simulator";
+      return;
+    }
     if (action === "stop") {
+      simulatorPaused = false;
       const previous = state.phase;
       state = stopRound(state, virtualNow);
       simulator = null;
@@ -321,6 +337,7 @@ export function createClashServer(
       return;
     }
     if (action === "reset") {
+      simulatorPaused = false;
       roundId++;
       mode = "idle";
       state = createGame(
@@ -412,6 +429,7 @@ export function createClashServer(
       if (usedChallenges.length >= library.length) usedChallenges = [];
     }
     settings = nextSettings;
+    simulatorPaused = false;
     state = next;
     displayFeed = emptyDisplayFeed();
     roundId++;

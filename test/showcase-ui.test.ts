@@ -2,6 +2,33 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 
 // Browser-native ES module, exercised without a DOM or frontend build step.
+const { isPauseShortcut } = await import(
+  new URL("../public/showcase/keyboard.js", import.meta.url).href
+);
+
+test("Space pause shortcut ignores held keys, modifiers, composition and editing fields", () => {
+  assert.equal(isPauseShortcut({ code: "Space" }), true);
+  assert.equal(isPauseShortcut({ key: " " }), true);
+  assert.equal(isPauseShortcut({ code: "Enter" }), false);
+  for (const key of [
+    "repeat",
+    "isComposing",
+    "altKey",
+    "ctrlKey",
+    "metaKey",
+    "shiftKey",
+  ])
+    assert.equal(isPauseShortcut({ code: "Space", [key]: true }), false);
+  assert.equal(
+    isPauseShortcut({ code: "Space", target: { closest: () => ({}) } }),
+    false,
+  );
+  assert.equal(
+    isPauseShortcut({ code: "Space", target: { closest: () => null } }),
+    true,
+  );
+});
+
 const { createFeedQueue } = await import(
   new URL("../public/showcase/feed.js", import.meta.url).href
 );

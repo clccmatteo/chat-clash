@@ -12,7 +12,11 @@ fit();
 let lastMvp = "",
   lastVotes = "";
 subscribe(
-  ({ game: g }) => {
+  ({ game: g, simulatorPaused }) => {
+    document.documentElement.classList.toggle(
+      "simulator-paused",
+      showcase && !!simulatorPaused,
+    );
     document.documentElement.lang = g.language;
     for (const team of ["A", "B"]) {
       const key = team.toLowerCase();

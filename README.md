@@ -34,6 +34,10 @@ npm start
    transparency guide. You can also [open the overlay](http://127.0.0.1:3000/overlay/)
    directly without OBS.
 
+Press **Space** during a Showcase demo to pause its clock, scoreboard and chat;
+press **Space** again to resume the same round. This also works after clicking
+the center scoreboard. Live Twitch rounds cannot be paused.
+
 Simulator speed advances the virtual clock; scoring rules stay the same. Use
 **Stop** to abort, **Reset** to clear, or start another round after completion.
 Refreshing reconnects to the same in-memory match. The simulator sends no Twitch

@@ -592,3 +592,6 @@ body {
 .showcase .brand {
   display: none;
 }
+.showcase.simulator-paused * {
+  animation-play-state: paused !important;
+}

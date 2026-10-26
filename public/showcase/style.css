@@ -387,7 +387,7 @@ button:disabled {
     monospace;
   letter-spacing: 1px;
 }
-.broadcast-footer > span:nth-child(2) {
+.broadcast-footer > span:nth-child(3) {
   color: #869c95;
 }
 #new-demo {
@@ -414,6 +414,13 @@ button:disabled {
 }
 [hidden] {
   display: none !important;
+}
+.paused .chat-row {
+  animation-play-state: paused;
+}
+.paused #playback-status {
+  color: var(--mint);
+  font-weight: 800;
 }
 @keyframes arrive {
   from {

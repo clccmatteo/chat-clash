@@ -358,3 +358,21 @@ metadata until the real adapter resolves native emotes. No runtime AI calls.
   outcome remains exactly unchanged. Protected game/config/Twitch sources and
   docs/submission.md / docs/video-script.md are untouched. No runtime dependency
   was added. Publish only the three feature steps after the final checks pass.
+
+### Follow-up — Space pauses and resumes Showcase
+
+- Added simulator-only pause/resume control actions. Pausing stops virtual-clock
+  advancement and event generation while snapshots keep the connection alive.
+  Resume consumes no paused wall time; game rules and configured durations stay
+  unchanged. Stop/reset/new demo clear the pause; idle/completed/live requests
+  are rejected. Live Twitch integration and protected submission docs are untouched.
+- Space toggles pause in Showcase and its embedded scoreboard, with a visible
+  footer status. Held keys, modifiers, composition and editing fields are ignored.
+  Chat scheduling and showcase pulse/entry animations pause with the clock.
+- Verification after server work: 56 tests and strict TypeScript pass. After UI
+  work: 57 tests and strict TypeScript pass, including phase/vote/feed freezing,
+  resume without catch-up, reset/stop handling, live rejection and key guards.
+- Browser check: Space froze both the visible timer and chat for over two seconds;
+  Space after focusing the iframe resumed the round, and another press paused it.
+  Left the demo paused for the user. Saved ignored evidence at
+  artifacts/showcase-space-paused.jpg. README documents the shortcut.
