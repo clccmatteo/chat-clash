@@ -255,3 +255,30 @@ metadata until the real adapter resolves native emotes. No runtime AI calls.
   and the final Devpost form remain human tasks; nothing has been submitted.
 - Verification: all 51 tests and strict TypeScript pass on Node 22. Script ends
   at 2:45 and includes each requested shot. No deployment, remote or push.
+
+### Step 8 — Final safety pass
+
+- Scanned all refs/reflogs, historical paths/blobs/commit metadata and project
+  working-tree files, including ignored local evidence but excluding Git internals
+  and installed dependencies. Compared actual local credential values without
+  printing them and reviewed credential, OAuth/Bearer, token-like and key patterns.
+- Pre-report scan: eight commits, 81 historical blobs, 87 working-tree files.
+  No credential or real Client ID appeared in history or current tracked content;
+  no private paths occurred in any historical tree. Reviewed placeholder and Git
+  hash matches. Expected local credential matches were confined to ignored `.env`
+  and `.local/twitch-tokens.json` (both 0600; local directory 0700).
+- Reconfirmed `.gitignore` covers environment variants, `.local/` and artifacts/;
+  index contains no private files. Local screenshots, including historical
+  authorization UI evidence, remain ignored. Recorded scope in docs/security-check.md.
+- Attempted local OCR of ignored screenshots; the host Vision service could not
+  process them. Pixel content is not credential-cleared. Kept all screenshots out
+  of Git and documented human review before reusing any historical capture.
+- Compared protected source/config with the initial snapshot: game rules, values,
+  engine, simulator, server and Twitch integration/transport are unchanged.
+  The requested announcement copy is the only Twitch source diff.
+- Verification: all 51 tests and strict TypeScript pass on Node 22; Git diff checks
+  and repository integrity check pass. Repeat the safety scan after this commit
+  to cover the final revision. No remote, push or deployment.
+- Stopped the isolated review server and reset/closed temporary browser views.
+  Human work remains: record/review/upload the video, get the actual session ID
+  using /status, fill the draft links and complete/submit Devpost before the deadline.
