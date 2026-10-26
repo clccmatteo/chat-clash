@@ -282,3 +282,17 @@ metadata until the real adapter resolves native emotes. No runtime AI calls.
 - Stopped the isolated review server and reset/closed temporary browser views.
   Human work remains: record/review/upload the video, get the actual session ID
   using /status, fill the draft links and complete/submit Devpost before the deadline.
+
+### Follow-up — GitHub repository publication
+
+- The user supplied https://github.com/clccmatteo/chat-clash.git after the request
+  for a repository URL to add the remote and push. Verified the remote is empty
+  and added it as origin without changing the prepared history.
+- Filled the repository URL in docs/submission.md. The video URL and actual Codex
+  session ID remain human-supplied fields.
+- Verification: all 51 tests and strict TypeScript pass on Node 22.23.4; Git diff
+  checks pass. Re-run the full credential/history scan after committing this
+  documentation update, then publish main with git push --set-upstream origin main
+  and verify the remote head matches the local head.
+- This publishes source only. The app remains local-only; no deployment, runtime
+  configuration changes, game changes or Twitch calls are part of this follow-up.

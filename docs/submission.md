@@ -3,7 +3,7 @@
 Submission deadline supplied in the brief: **November 2, 2026, 2:00 PM PT**.
 This is an English draft; complete the links and session ID before submitting.
 
-- Code repository: **TODO — public GitHub repository URL**
+- Code repository: [clccmatteo/chat-clash](https://github.com/clccmatteo/chat-clash)
 - Demo video: **TODO — public or unlisted YouTube URL, under 3 minutes**
 - Codex session ID: **TODO — copy the actual session ID using `/status`**
 
